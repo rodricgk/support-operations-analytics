@@ -20,3 +20,11 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Exemplo INC0000045: quatro registros, incluindo dois com estado Resolved. As datas resolved_at e closed_at já aparecem preenchidas no registro New.
 - Hipótese a investigar: campos de resultado podem ter sido adicionados retrospectivamente no enriquecimento. Não assumir que estavam disponíveis no momento de cada evento.
 - Discussão com o autor ainda pendente. Próximo passo: interpretar o exemplo antes de definir regras de consolidação e métricas.
+
+## Segunda inspeção — ordem dos eventos
+
+- Discutida a distinção entre contar eventos e contar chamados.
+- Explicada a fila histórica como último estado conhecido até uma data de corte.
+- Executado scripts/02_verificar_historico.py; original preservado.
+- Encontrados empates de horário, estado desconhecido e exceções temporais. Evidências em qualidade-historico.md.
+- Próximo exercício: interpretar sys_mod_count como candidato a desempate e investigar sua consistência. A regra ainda não foi adotada.

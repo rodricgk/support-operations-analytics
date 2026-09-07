@@ -33,6 +33,14 @@ python -m venv .venv
 
 Se o ambiente já existe, execute apenas a última linha. A inspeção lê a base sem modificá-la e mostra o histórico de um chamado para discussão.
 
+Segunda inspeção, sobre estados, datas e empates:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/02_verificar_historico.py
+```
+
+Veja o [diagnóstico inicial](docs/qualidade-historico.md). A versão em notebook está em `notebooks/02_verificar_historico.ipynb`, para leitura e execução em um ambiente Jupyter com pandas instalado.
+
 ## Entregas previstas
 
 - Preparação reproduzível em Python.
