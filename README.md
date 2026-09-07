@@ -11,13 +11,27 @@ Ajudar um coordenador de suporte a entender a evolução da fila e identificar s
 UCI — Incident management process enriched event log.
 https://doi.org/10.24432/C57S4H
 
-Amaral, C., Fantinato, M., & Peres, S. (2018). Licença da base: CC BY 4.0. A documentação informa 141.712 eventos de 24.918 incidentes anonimizados. Essas contagens ainda serão verificadas no arquivo.
+Amaral, C., Fantinato, M., & Peres, S. (2018). Licença da base: CC BY 4.0. Conferidas no CSV: 141.712 eventos de 24.918 incidentes anonimizados, com 36 colunas.
 
 O projeto utiliza exclusivamente dados públicos; não contém dados do empregador do autor. As transformações serão documentadas. Este projeto não é afiliado à organização de origem da base.
 
 ## Estado atual
 
-Planejamento e estrutura inicial. Não há dados carregados, banco provisionado ou resultados analíticos. A viabilidade de fila histórica e SLA depende da inspeção dos registros.
+Primeira inspeção local implementada. Não há banco provisionado ou dashboard. A viabilidade de fila histórica e SLA depende da inspeção dos registros.
+
+## Executar a primeira inspeção (Windows / PowerShell)
+
+Baixe o ZIP na [página oficial da UCI](https://archive.ics.uci.edu/dataset/498/incident+management+process+enriched+event+log), extraia e coloque `incident_event_log.csv` em `data/raw/`. Preserve o conteúdo original. O CSV não é versionado.
+
+Ambiente usado: Python 3.14.5 e pandas 3.0.5.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe scripts/01_inspecionar_base.py
+```
+
+Se o ambiente já existe, execute apenas a última linha. A inspeção lê a base sem modificá-la e mostra o histórico de um chamado para discussão.
 
 ## Entregas previstas
 
