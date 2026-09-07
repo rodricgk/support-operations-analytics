@@ -28,3 +28,11 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Executado scripts/02_verificar_historico.py; original preservado.
 - Encontrados empates de horário, estado desconhecido e exceções temporais. Evidências em qualidade-historico.md.
 - Próximo exercício: interpretar sys_mod_count como candidato a desempate e investigar sua consistência. A regra ainda não foi adotada.
+
+## Terceira inspeção — consistência do contador
+
+- O autor identificou o maior contador como candidato a evento posterior em um empate de horário.
+- Script 03 executado: valores válidos, mas 5 chamados apresentam regressões do contador entre horários (11 grupos).
+- Chave composta permanece única após conversão numérica.
+- Evidências e limites em validacao-contador.md. Nenhuma correção ou exclusão aplicada.
+- Próximo passo: confrontar as exceções temporais antes de estabelecer a regra de ordenação do modelo.

@@ -41,6 +41,9 @@ Segunda inspeção, sobre estados, datas e empates:
 
 Veja o [diagnóstico inicial](docs/qualidade-historico.md). A versão em notebook está em `notebooks/02_verificar_historico.ipynb`, para leitura e execução em um ambiente Jupyter com pandas instalado.
 
+Terceira inspeção: `.\.venv\Scripts\python.exe scripts/03_validar_contador.py`.
+Veja a [validação do contador](docs/validacao-contador.md) e o notebook `notebooks/03_validar_contador.ipynb`.
+
 ## Entregas previstas
 
 - Preparação reproduzível em Python.
