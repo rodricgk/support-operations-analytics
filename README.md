@@ -44,6 +44,9 @@ Veja o [diagnóstico inicial](docs/qualidade-historico.md). A versão em noteboo
 Terceira inspeção: `.\.venv\Scripts\python.exe scripts/03_validar_contador.py`.
 Veja a [validação do contador](docs/validacao-contador.md) e o notebook `notebooks/03_validar_contador.ipynb`.
 
+Quarta inspeção: `.\.venv\Scripts\python.exe scripts/04_investigar_inconsistencias.py`.
+Veja a [investigação de inconsistências](docs/investigacao-inconsistencias.md). Extratos diagnósticos são gerados em `data/processed/investigacao_temporal`, fora do Git.
+
 ## Entregas previstas
 
 - Preparação reproduzível em Python.

@@ -36,3 +36,11 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Chave composta permanece única após conversão numérica.
 - Evidências e limites em validacao-contador.md. Nenhuma correção ou exclusão aplicada.
 - Próximo passo: confrontar as exceções temporais antes de estabelecer a regra de ordenação do modelo.
+
+## 08/09/2026 — investigação das inconsistências
+
+- Cruzados os conjuntos: quatro chamados em comum; seis na união.
+- Todos os cinco eventos anteriores à abertura ocorrem na criação sistêmica ou depois dela.
+- INC0000137 mostra Resolved → New com regressão do contador e reopen_count zero; a classificação histórica é ambígua.
+- Causa raiz permanece indeterminada. Nenhuma data, contador ou estado corrigido por suposição.
+- Geradas evidências locais pelo script 04; resultados documentados em investigacao-inconsistencias.md.
