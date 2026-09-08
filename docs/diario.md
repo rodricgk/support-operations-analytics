@@ -44,3 +44,12 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - INC0000137 mostra Resolved → New com regressão do contador e reopen_count zero; a classificação histórica é ambígua.
 - Causa raiz permanece indeterminada. Nenhuma data, contador ou estado corrigido por suposição.
 - Geradas evidências locais pelo script 04; resultados documentados em investigacao-inconsistencias.md.
+
+## 08/09/2026 — comparação de cenários da fila diária
+
+- Acordado preservar os valores originais e sinalizar exceções, sem atribuir causa não comprovada à plataforma.
+- Implementada fotografia diária provisória por último estado conhecido, com espera como pendência e estados desconhecidos em contagem separada.
+- Comparados 355 dias: cinco dias com diferença, máximo de cinco chamados ou 3,07% da fila com todos no primeiro dia.
+- Seis fotografias apresentam um chamado em estado desconhecido. Próxima etapa deve incluir essa lacuna na definição dos indicadores.
+- Nenhuma correção ou exclusão definitiva aplicada. Resultados não quantificam a fila verdadeira nem impacto intradiário.
+- Próximo passo de estudo: formalizar dicionário dos indicadores e a relação entre eventos e tabela de chamados antes de implementar no Supabase.

@@ -47,6 +47,9 @@ Veja a [validação do contador](docs/validacao-contador.md) e o notebook `noteb
 Quarta inspeção: `.\.venv\Scripts\python.exe scripts/04_investigar_inconsistencias.py`.
 Veja a [investigação de inconsistências](docs/investigacao-inconsistencias.md). Extratos diagnósticos são gerados em `data/processed/investigacao_temporal`, fora do Git.
 
+Quinta etapa: `.\.venv\Scripts\python.exe scripts/05_comparar_fila.py` (depende dos extratos do script 04).
+Veja a [comparação de cenários da fila](docs/sensibilidade-fila.md), com regras provisórias, resultados e limitações. Trata-se de análise exploratória, não de um indicador final validado da operação.
+
 ## Entregas previstas
 
 - Preparação reproduzível em Python.
