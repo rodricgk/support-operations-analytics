@@ -53,3 +53,11 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Seis fotografias apresentam um chamado em estado desconhecido. Próxima etapa deve incluir essa lacuna na definição dos indicadores.
 - Nenhuma correção ou exclusão definitiva aplicada. Resultados não quantificam a fila verdadeira nem impacto intradiário.
 - Próximo passo de estudo: formalizar dicionário dos indicadores e a relação entre eventos e tabela de chamados antes de implementar no Supabase.
+
+## 08/09/2026 — definição dos indicadores e estudo
+
+- Criado dicionário v0.1: fila observada, P90 de duração retrospectiva e mediana da idade dos pendentes.
+- Diferenciados estoque, abertura informada, resolução informada e transições observadas. Contagens por datas informadas não reconciliam automaticamente o estoque.
+- Especificados população, data de referência, recortes, n elegível, limitações e controles de qualidade.
+- Preparado roteiro de estudo: granularidade, funções de janela, estoque/fluxo, proveniência e modelagem dimensional.
+- Nenhuma meta de SLA inventada; indicadores de duração ainda não implementados. Próximo passo: preparar as tabelas e suas regras de consolidação com base no dicionário.

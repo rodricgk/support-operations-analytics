@@ -50,6 +50,8 @@ Veja a [investigação de inconsistências](docs/investigacao-inconsistencias.md
 Quinta etapa: `.\.venv\Scripts\python.exe scripts/05_comparar_fila.py` (depende dos extratos do script 04).
 Veja a [comparação de cenários da fila](docs/sensibilidade-fila.md), com regras provisórias, resultados e limitações. Trata-se de análise exploratória, não de um indicador final validado da operação.
 
+Próxima fase: [dicionário de indicadores v0.1](docs/dicionario-indicadores.md) e [roteiro de estudo](docs/estudo-fundamentos.md). O dicionário especifica as métricas e os grãos; não implica que todos os cálculos já estejam implementados.
+
 ## Entregas previstas
 
 - Preparação reproduzível em Python.
