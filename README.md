@@ -55,6 +55,8 @@ Próxima fase: [dicionário de indicadores v0.1](docs/dicionario-indicadores.md)
 Sexta etapa: `.\.venv\Scripts\python.exe scripts/06_modelar_tabelas.py` (depende das etapas 04 e 05).
 Gera eventos, chamados, fotografias e calendário locais, com [regras e validação do modelo](docs/modelo-local.md). A carga no banco ainda não foi realizada.
 
+Projeto Supabase separado criado e conexão pelo Codex validada. Veja [estado das conexões](docs/conexao-supabase.md). Python e Power BI ainda não possuem conexão direta configurada.
+
 ## Entregas previstas
 
 - Preparação reproduzível em Python.

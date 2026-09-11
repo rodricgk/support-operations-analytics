@@ -70,3 +70,11 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Reconciliação de quatro contagens em 355 datas com a etapa 05 passou; CSV original preservado.
 - Verificada consolidação de datas contra exemplos controlados de conflito, ausência e formato inválido.
 - Próximo passo: chaves e estrutura SQL, depois carga e reconciliação no Supabase separado. Nenhuma operação de banco realizada nesta sessão.
+
+## 11/09/2026 — criação e conexão do projeto Supabase
+
+- Autor autorizou criar e conectar; confirmou rodricgk's Org e São Paulo.
+- Conector informou custo de criação 0/mês no plano Free; confirmação de custo concluída.
+- Projeto support-operations-analytics criado, referência cgvfubhikahizyydpmst, status ACTIVE_HEALTHY.
+- Consulta de teste pelo conector retornou PostgreSQL 17.6 e connection_test=1.
+- Vínculo documentado no repositório, sem credenciais. Conexões diretas de Python e Power BI e carga de dados ainda pendentes.

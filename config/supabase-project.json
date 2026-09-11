@@ -1,0 +1,10 @@
+{
+  "name": "support-operations-analytics",
+  "project_id": "cgvfubhikahizyydpmst",
+  "organization_name": "rodricgk's Org",
+  "region": "sa-east-1",
+  "dashboard_url": "https://supabase.com/dashboard/project/cgvfubhikahizyydpmst",
+  "connection_verified": "Codex Supabase connector",
+  "direct_python_connection_configured": false,
+  "power_bi_connection_configured": false
+}
