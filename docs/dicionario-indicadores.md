@@ -1,6 +1,6 @@
 # Dicionário de indicadores — versão 0.1
 
-Status: especificação inicial para implementação. Apenas a fila diária e sua sensibilidade foram calculadas na etapa 05; os demais indicadores ainda precisam de implementação e validação.
+Status: especificação inicial. Fila diária e sensibilidade calculadas na etapa 05. A etapa 06 constrói tabelas locais e calcula durações individuais elegíveis e idades por fotografia; medidas agregadas de duração e idade ainda precisam de implementação e validação para apresentação.
 
 ## Decisão e público
 

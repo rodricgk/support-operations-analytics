@@ -61,3 +61,12 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Especificados população, data de referência, recortes, n elegível, limitações e controles de qualidade.
 - Preparado roteiro de estudo: granularidade, funções de janela, estoque/fluxo, proveniência e modelagem dimensional.
 - Nenhuma meta de SLA inventada; indicadores de duração ainda não implementados. Próximo passo: preparar as tabelas e suas regras de consolidação com base no dicionário.
+
+## 11/09/2026 — modelo analítico local
+
+- Construídas tabelas de eventos (141.712), chamados (24.918) e fotografias de pendentes/desconhecidos (170.645), além de calendário e resumo diário.
+- Mantidos os seis chamados sinalizados; flags propagadas sem multiplicar eventos.
+- Atributos finais separados dos históricos; duração elegível calculada para 23.362 chamados. Medidas agregadas ainda pendentes.
+- Reconciliação de quatro contagens em 355 datas com a etapa 05 passou; CSV original preservado.
+- Verificada consolidação de datas contra exemplos controlados de conflito, ausência e formato inválido.
+- Próximo passo: chaves e estrutura SQL, depois carga e reconciliação no Supabase separado. Nenhuma operação de banco realizada nesta sessão.

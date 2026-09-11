@@ -52,6 +52,9 @@ Veja a [comparação de cenários da fila](docs/sensibilidade-fila.md), com regr
 
 Próxima fase: [dicionário de indicadores v0.1](docs/dicionario-indicadores.md) e [roteiro de estudo](docs/estudo-fundamentos.md). O dicionário especifica as métricas e os grãos; não implica que todos os cálculos já estejam implementados.
 
+Sexta etapa: `.\.venv\Scripts\python.exe scripts/06_modelar_tabelas.py` (depende das etapas 04 e 05).
+Gera eventos, chamados, fotografias e calendário locais, com [regras e validação do modelo](docs/modelo-local.md). A carga no banco ainda não foi realizada.
+
 ## Entregas previstas
 
 - Preparação reproduzível em Python.
