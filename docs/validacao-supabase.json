@@ -1,0 +1,135 @@
+{
+  "verificado_em_utc": "2026-09-11 13:34:57 UTC",
+  "project_id": "cgvfubhikahizyydpmst",
+  "schema": "analytics",
+  "fonte_sha256": "fd184bbfd62329cfe093e99da2ea7071905f2ead91900b448eb2635870821bef",
+  "testes_sql": [
+    {
+      "teste": "chamados_sem_origem_final_correspondente",
+      "esperado": 0,
+      "observado": 0,
+      "passou": true
+    },
+    {
+      "teste": "chamados_sinalizados",
+      "esperado": 6,
+      "observado": 6,
+      "passou": true
+    },
+    {
+      "teste": "denominadores_divergentes",
+      "esperado": 0,
+      "observado": 0,
+      "passou": true
+    },
+    {
+      "teste": "dias_divergentes_python_sql",
+      "esperado": 0,
+      "observado": 0,
+      "passou": true
+    },
+    {
+      "teste": "duracoes_divergentes",
+      "esperado": 0,
+      "observado": 0,
+      "passou": true
+    },
+    {
+      "teste": "elegiveis_duracao",
+      "esperado": 23362,
+      "observado": 23362,
+      "passou": true
+    },
+    {
+      "teste": "fotografias_com_evento_mais_recente_no_corte",
+      "esperado": 0,
+      "observado": 0,
+      "passou": true
+    },
+    {
+      "teste": "fotografias_divergentes_origem",
+      "esperado": 0,
+      "observado": 0,
+      "passou": true
+    },
+    {
+      "teste": "idades_divergentes",
+      "esperado": 0,
+      "observado": 0,
+      "passou": true
+    },
+    {
+      "teste": "linhas_calendario",
+      "esperado": 355,
+      "observado": 355,
+      "passou": true
+    },
+    {
+      "teste": "linhas_chamados",
+      "esperado": 24918,
+      "observado": 24918,
+      "passou": true
+    },
+    {
+      "teste": "linhas_eventos",
+      "esperado": 141712,
+      "observado": 141712,
+      "passou": true
+    },
+    {
+      "teste": "linhas_fotografias",
+      "esperado": 170645,
+      "observado": 170645,
+      "passou": true
+    },
+    {
+      "teste": "linhas_resumo",
+      "esperado": 355,
+      "observado": 355,
+      "passou": true
+    }
+  ],
+  "checksums": [
+    {
+      "tabela": "calendario_fila",
+      "esperado": "850d35b7042ef0e0124beee9f716d556",
+      "observado": "850d35b7042ef0e0124beee9f716d556",
+      "linhas_esperadas": 355,
+      "linhas_observadas": 355,
+      "passou": true
+    },
+    {
+      "tabela": "chamados",
+      "esperado": "b746f3f8b58b33fca87e8638a5186c55",
+      "observado": "b746f3f8b58b33fca87e8638a5186c55",
+      "linhas_esperadas": 24918,
+      "linhas_observadas": 24918,
+      "passou": true
+    },
+    {
+      "tabela": "eventos",
+      "esperado": "0c75592aa8b7e8709acb026f4d2da031",
+      "observado": "0c75592aa8b7e8709acb026f4d2da031",
+      "linhas_esperadas": 141712,
+      "linhas_observadas": 141712,
+      "passou": true
+    },
+    {
+      "tabela": "fotografias",
+      "esperado": "4382d41bf101b00097852a139a7982c5",
+      "observado": "4382d41bf101b00097852a139a7982c5",
+      "linhas_esperadas": 170645,
+      "linhas_observadas": 170645,
+      "passou": true
+    },
+    {
+      "tabela": "resumo_diario",
+      "esperado": "10f6ef145d25bc6eaedbdab5d8123257",
+      "observado": "10f6ef145d25bc6eaedbdab5d8123257",
+      "linhas_esperadas": 355,
+      "linhas_observadas": 355,
+      "passou": true
+    }
+  ],
+  "observacao": "Checksums cobrem todos os campos exceto duracao_resolucao_horas e idade_horas, verificadas nos testes SQL com tolerância de 0,000001 hora. Python direto e Power BI ainda não autenticados."
+}

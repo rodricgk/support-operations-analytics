@@ -78,3 +78,22 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Projeto support-operations-analytics criado, referência cgvfubhikahizyydpmst, status ACTIVE_HEALTHY.
 - Consulta de teste pelo conector retornou PostgreSQL 17.6 e connection_test=1.
 - Vínculo documentado no repositório, sem credenciais. Conexões diretas de Python e Power BI e carga de dados ainda pendentes.
+
+## 11/09/2026 — estrutura SQL e início da carga
+
+- Criadas cinco tabelas no esquema analytics, com chaves primárias, estrangeiras e CHECKs. SQL aplicado registrado no repositório.
+- Testes de duplicação, mês inválido e referência inexistente passaram; transação de teste revertida.
+- Importados pelo painel 355 dias e 24.918 chamados, com contagens conferidas por SQL.
+- Painel mostrou envio em pequenos lotes; preparado script 07 com COPY para completar a carga e permitir reprodução.
+- Driver psycopg 3.3.5 instalado; cinco CSVs conferidos localmente. Senha não armazenada no projeto.
+- Próximo passo: executar o script autenticado, reconciliar o modelo e verificar repetição sem duplicar. Python e Power BI ainda não declarados conectados.
+
+## 11/09/2026 — carga concluída e reconciliação independente
+
+- Autor preferiu adiar a senha local. Carga concluída com painel e conector autenticados, sem conexão Python direta.
+- Histórico de 141.712 eventos integralmente carregado; registros existentes preservados durante a retomada em lotes.
+- Resumo de 355 dias importado como referência independente produzida em Python.
+- Reconstruídas 170.645 fotografias no SQL com LEAD e intervalos de validade dos eventos.
+- Os 14 testes SQL passaram; checksums dos cinco conjuntos coincidiram com os CSVs, cobrindo todos os campos exceto medidas decimais, conferidas com tolerância própria.
+- Testes controlados de empate de horário e evento à meia-noite passaram. Repetição de inserção do calendário não gerou novas linhas; teste revertido.
+- Próximo passo: estudar o SQL de reconstrução e calcular indicadores de duração e idade com populações elegíveis explícitas. A conexão do Power BI será uma etapa própria.

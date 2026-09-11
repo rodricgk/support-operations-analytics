@@ -18,11 +18,11 @@ config/supabase-project.json identifica o destino deste repositório e não cont
 
 ## O que ainda falta
 
-- Criar as tabelas SQL e carregar os dados públicos.
+- A carga já foi concluída nas cinco tabelas e reconciliada. Veja modelo-supabase.md e validacao-supabase.json.
 - Configurar a conexão direta de carga em Python e a conexão de leitura no Power BI.
-- Para clientes locais IPv4, usar os dados exatos de Session pooler apresentados em Connect no painel. Não adivinhar o host do pooler.
+- Session pooler conferido em Connect: aws-0-sa-east-1.pooler.supabase.com, porta 5432, banco postgres, usuário postgres.cgvfubhikahizyydpmst. Parâmetros salvos sem senha; script 07 preparado, mas conexão Python autenticada ainda pendente.
 - Configurar credenciais locais fora do Git e validar as conexões antes de declarar a carga pronta. Nenhuma senha foi obtida ou alterada nesta etapa.
 
-Conectar o Codex ao Supabase permite executar SQL pelo conector, mas não autentica automaticamente programas externos. A primeira conexão foi apenas um teste de leitura; os CSVs continuam locais.
+Conectar o Codex ao Supabase permite executar SQL pelo conector, mas não autentica automaticamente programas externos. O modelo foi preenchido pelo painel e pelo conector. As fotografias foram reconstruídas em SQL e comparadas com o Python. Os CSVs originais continuam locais; nenhuma senha foi criada, obtida ou alterada por esta automação.
 
 Referência: https://supabase.com/docs/guides/database/connecting-to-postgres

@@ -17,7 +17,7 @@ O projeto utiliza exclusivamente dados públicos; não contém dados do empregad
 
 ## Estado atual
 
-Primeira inspeção local implementada. Não há banco provisionado ou dashboard. A viabilidade de fila histórica e SLA depende da inspeção dos registros.
+Histórico público investigado e modelo local implementado. Cinco tabelas preenchidas no Supabase: 141.712 eventos, 24.918 chamados, 170.645 fotografias, 355 datas e 355 resumos diários. Reconciliação Python versus SQL concluída: 14 testes passaram e cinco checksums conferiram. Ainda não há dashboard. A fila segue regras provisórias documentadas; nenhuma meta de SLA foi inventada.
 
 ## Executar a primeira inspeção (Windows / PowerShell)
 
@@ -56,6 +56,10 @@ Sexta etapa: `.\.venv\Scripts\python.exe scripts/06_modelar_tabelas.py` (depende
 Gera eventos, chamados, fotografias e calendário locais, com [regras e validação do modelo](docs/modelo-local.md). A carga no banco ainda não foi realizada.
 
 Projeto Supabase separado criado e conexão pelo Codex validada. Veja [estado das conexões](docs/conexao-supabase.md). Python e Power BI ainda não possuem conexão direta configurada.
+
+Etapa Supabase: carga concluída pelo painel e conector autenticados. Fotografias reconstruídas independentemente com `LEAD` em `sql/03_gerar_fotografias.sql`, com resultado equivalente ao Python. Veja [modelo SQL e reprodução](docs/modelo-supabase.md) e [evidência da validação](docs/validacao-supabase.json).
+
+O script `07_carregar_supabase.py` oferece uma alternativa de carga por COPY; sua execução autenticada permanece pendente, por escolha do autor de adiar a senha local. O script `08_preparar_conferencia_integridade.py` gera os checksums dos CSVs para comparação no banco sem precisar de senha.
 
 ## Entregas previstas
 
