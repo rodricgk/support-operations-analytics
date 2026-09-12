@@ -61,6 +61,8 @@ Etapa Supabase: carga concluída pelo painel e conector autenticados. Fotografia
 
 O script `07_carregar_supabase.py` oferece uma alternativa de carga por COPY; sua execução autenticada permanece pendente, por escolha do autor de adiar a senha local. O script `08_preparar_conferencia_integridade.py` gera os checksums dos CSVs para comparação no banco sem precisar de senha.
 
+Primeiros indicadores de duração implementados: mediana 22,10 h e P90 381,55 h, sobre 23.362 chamados elegíveis. Consulte [população, recortes e limites](docs/indicadores-duracao.md), a consulta `sql/04_indicadores_duracao.sql` e o tutorial `notebooks/09_indicadores_duracao.ipynb`. Execute `scripts/09_indicadores_duracao.py` para reproduzir e conferir com a saída SQL salva. A duração é retrospectiva, em horas corridas; não é uma medida de SLA.
+
 ## Entregas previstas
 
 - Preparação reproduzível em Python.

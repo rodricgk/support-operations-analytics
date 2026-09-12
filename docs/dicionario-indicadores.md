@@ -1,6 +1,6 @@
 # Dicionário de indicadores — versão 0.1
 
-Status: especificação inicial. Fila diária e sensibilidade calculadas na etapa 05. A etapa 06 constrói tabelas locais e calcula durações individuais elegíveis e idades por fotografia; medidas agregadas de duração e idade ainda precisam de implementação e validação para apresentação.
+Status em 11/09/2026: fila e sensibilidade calculadas; modelo local e Supabase reconciliados. Mediana e P90 de duração implementados e conferidos em Python e SQL na etapa 09, no geral e por prioridade final, em dois cenários. Veja indicadores-duracao.md. A medida agregada de idade da fila continua como próxima etapa.
 
 ## Decisão e público
 
@@ -92,4 +92,4 @@ Não denominar automaticamente um retorno à pendência como reabertura real: o 
 | Fotografias | Um chamado pendente ou desconhecido em uma data de corte | Fila e idade com atributos conhecidos no corte |
 | Calendário | Uma data | Filtros e eixos temporais |
 
-As fotografias agregadas atuais não permitem todos os recortes: a implementação deverá manter o grão necessário, ou produzir agregações com as dimensões previstas. Não ligar tabelas de fatos diretamente e depois somar colunas de chamados repetidas pelos eventos. O desenho físico e os relacionamentos serão construídos na próxima etapa.
+As fotografias implementadas preservam o grão chamado por data e os atributos históricos. As tabelas já estão no Supabase; os relacionamentos do Power BI ainda serão construídos. Não ligar fatos diretamente e depois somar colunas de chamados repetidas pelos eventos.

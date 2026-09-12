@@ -97,3 +97,12 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Os 14 testes SQL passaram; checksums dos cinco conjuntos coincidiram com os CSVs, cobrindo todos os campos exceto medidas decimais, conferidas com tolerância própria.
 - Testes controlados de empate de horário e evento à meia-noite passaram. Repetição de inserção do calendário não gerou novas linhas; teste revertido.
 - Próximo passo: estudar o SQL de reconstrução e calcular indicadores de duração e idade com populações elegíveis explícitas. A conexão do Power BI será uma etapa própria.
+
+## 11/09/2026 — mediana e P90 da duração
+
+- Implementada leitura retrospectiva de toda a extração: 23.362 elegíveis de 24.918 chamados. Os 1.556 excluídos não têm data de resolução informada; continuam na base.
+- Mediana 22,10 h e P90 381,55 h, calculados por chamado, em horas corridas.
+- SQL e Python recalcularam durações pelas datas e reconciliaram dez recortes (geral e quatro prioridades finais, com e sem sinalizados).
+- Testados percentil contínuo com interpolação linear, população vazia e zero em ambos os ambientes.
+- Salvas consultas, evidência SQL e tutorial. Cinco células do notebook executadas sequencialmente no Python do projeto; motor Jupyter não executado.
+- Recortes por prioridade são descritivos; não comprovam causa nem qualidade do atendimento. Próximo passo: idade dos pendentes por fotografia.
