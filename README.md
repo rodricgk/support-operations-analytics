@@ -63,6 +63,8 @@ O script `07_carregar_supabase.py` oferece uma alternativa de carga por COPY; su
 
 Primeiros indicadores de duração implementados: mediana 22,10 h e P90 381,55 h, sobre 23.362 chamados elegíveis. Consulte [população, recortes e limites](docs/indicadores-duracao.md), a consulta `sql/04_indicadores_duracao.sql` e o tutorial `notebooks/09_indicadores_duracao.ipynb`. Execute `scripts/09_indicadores_duracao.py` para reproduzir e conferir com a saída SQL salva. A duração é retrospectiva, em horas corridas; não é uma medida de SLA.
 
+Idade da fila implementada em `scripts/10_idade_fila_diaria.py` e `sql/05_idade_fila_diaria.sql`: 710 resultados conferidos, cobrindo 355 dias e dois cenários. Veja [regras, exemplos e uso no Power BI](docs/idade-fila.md) e o tutorial `notebooks/10_idade_fila_diaria.ipynb`. Dias sem pendentes têm mediana em branco.
+
 ## Entregas previstas
 
 - Preparação reproduzível em Python.

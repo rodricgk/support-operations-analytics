@@ -1,6 +1,6 @@
 # Dicionário de indicadores — versão 0.1
 
-Status em 11/09/2026: fila e sensibilidade calculadas; modelo local e Supabase reconciliados. Mediana e P90 de duração implementados e conferidos em Python e SQL na etapa 09, no geral e por prioridade final, em dois cenários. Veja indicadores-duracao.md. A medida agregada de idade da fila continua como próxima etapa.
+Status em 11/09/2026: os três indicadores principais foram implementados. Modelo local e Supabase reconciliados; duração conferida na etapa 09 e idade diária na etapa 10 (355 dias, dois cenários). Veja indicadores-duracao.md e idade-fila.md. Modelagem e conexão de leitura do Power BI são a próxima etapa.
 
 ## Decisão e público
 

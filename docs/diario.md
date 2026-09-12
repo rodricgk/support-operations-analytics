@@ -106,3 +106,13 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Testados percentil contínuo com interpolação linear, população vazia e zero em ambos os ambientes.
 - Salvas consultas, evidência SQL e tutorial. Cinco células do notebook executadas sequencialmente no Python do projeto; motor Jupyter não executado.
 - Recortes por prioridade são descritivos; não comprovam causa nem qualidade do atendimento. Próximo passo: idade dos pendentes por fotografia.
+
+## 11/09/2026 — idade da fila diária
+
+- Recalculada a idade desde a abertura original até a meia-noite seguinte, por chamado e fotografia.
+- SQL e Python reconciliaram 710 combinações: 355 dias e dois cenários, incluindo fila, elegíveis, inválidos, desconhecidos e mediana.
+- Dois dias sem pendentes preservados com mediana ausente. Nenhum pendente com idade inválida nesta execução; desconhecidos separados em seis datas.
+- Maior fila: 1.869 em 16/03/2016, mediana de 157,45 h. Maior mediana: 5.365,77 h em 15/12/2016, sobre 33 pendentes; chamado central inspecionado.
+- A regra representa o último estado observado, sem garantir completude operacional. Não interpretar redução de fila no fim da extração como melhora comprovada.
+- Testados vazio, ausência, abertura futura, corte exato e desconhecido. Banco somente consultado nesta etapa.
+- Próximo passo: preparar modelo de leitura, calendário e relacionamentos para Power BI.
