@@ -53,7 +53,7 @@ Veja a [comparação de cenários da fila](docs/sensibilidade-fila.md), com regr
 Próxima fase: [dicionário de indicadores v0.1](docs/dicionario-indicadores.md) e [roteiro de estudo](docs/estudo-fundamentos.md). O dicionário especifica as métricas e os grãos; não implica que todos os cálculos já estejam implementados.
 
 Sexta etapa: `.\.venv\Scripts\python.exe scripts/06_modelar_tabelas.py` (depende das etapas 04 e 05).
-Gera eventos, chamados, fotografias e calendário locais, com [regras e validação do modelo](docs/modelo-local.md). A carga no banco ainda não foi realizada.
+Gera eventos, chamados, fotografias e calendário locais, com [regras e validação do modelo](docs/modelo-local.md). A carga no banco foi concluída na etapa Supabase descrita abaixo.
 
 Projeto Supabase separado criado e conexão pelo Codex validada. Veja [estado das conexões](docs/conexao-supabase.md). Python e Power BI ainda não possuem conexão direta configurada.
 
@@ -66,6 +66,8 @@ Primeiros indicadores de duração implementados: mediana 22,10 h e P90 381,55 h
 Idade da fila implementada em `scripts/10_idade_fila_diaria.py` e `sql/05_idade_fila_diaria.sql`: 710 resultados conferidos, cobrindo 355 dias e dois cenários. Veja [regras, exemplos e uso no Power BI](docs/idade-fila.md) e o tutorial `notebooks/10_idade_fila_diaria.ipynb`. Dias sem pendentes têm mediana em branco.
 
 ## Entregas previstas
+
+Modelo de leitura para Power BI preparado: quatro views privadas, calendário de 731 dias e exportação local sem senha. Execute `scripts/11_preparar_power_bi.py` e siga o [guia de importação e relacionamentos](docs/modelo-power-bi.md). Nove verificações SQL passaram; o arquivo Power BI e a execução das consultas M ainda estão pendentes.
 
 - Preparação reproduzível em Python.
 - Estrutura e consultas SQL no Supabase.

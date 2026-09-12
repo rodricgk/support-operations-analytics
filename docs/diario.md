@@ -116,3 +116,12 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - A regra representa o último estado observado, sem garantir completude operacional. Não interpretar redução de fila no fim da extração como melhora comprovada.
 - Testados vazio, ausência, abertura futura, corte exato e desconhecido. Banco somente consultado nesta etapa.
 - Próximo passo: preparar modelo de leitura, calendário e relacionamentos para Power BI.
+
+## 11/09/2026 — preparação do modelo Power BI
+
+- Criadas quatro views privadas com security_invoker no Supabase; nove verificações SQL passaram.
+- Calendário contínuo de 731 dias (2016–2017), com 355 datas elegíveis para fotografias. Datas sem cobertura não representam fila zero.
+- Preparados quatro CSVs locais e consultas Power Query com tipos explícitos, sem pedir senha. Conferidas chaves, cobertura e leitura dos arquivos exportados.
+- Documentados relacionamentos por resolução e fotografia, com abertura inativa. Chamados e Fotografias permanecem sem relação direta no modelo BI.
+- Os 1.556 chamados sem resolução informada foram preservados; um filtro por resolução exige atenção ao denominador da qualidade.
+- Power Query e relacionamentos ainda precisam de execução no Power BI Desktop. Próximo passo: importar, conferir o modelo e construir as primeiras medidas DAX juntos.

@@ -1,0 +1,57 @@
+{
+  "projeto": "cgvfubhikahizyydpmst",
+  "data_local": "2026-09-11",
+  "migration": "preparar_modelo_leitura_power_bi",
+  "sql": "sql/07_validar_modelo_power_bi.sql",
+  "verificacoes": [
+    {
+      "teste": "anos_completos",
+      "passou": true
+    },
+    {
+      "teste": "calendario_unico_continuo",
+      "passou": true
+    },
+    {
+      "teste": "chamados_preservados",
+      "passou": true
+    },
+    {
+      "teste": "cobertura_datas",
+      "passou": true
+    },
+    {
+      "teste": "datas_elegiveis_identicas",
+      "passou": true
+    },
+    {
+      "teste": "fotografias_preservadas",
+      "passou": true
+    },
+    {
+      "teste": "quatro_views_security_invoker",
+      "passou": true
+    },
+    {
+      "teste": "resumo_preservado",
+      "passou": true
+    },
+    {
+      "teste": "sem_acesso_anon_authenticated",
+      "passou": true
+    }
+  ],
+  "linhas_sql": {
+    "Calendario": 731,
+    "Chamados": 24918,
+    "Fotografias": 170645,
+    "ResumoDiario": 355
+  },
+  "seguranca": {
+    "views_security_invoker": 4,
+    "acesso_anon_authenticated": false,
+    "avisos_informativos_rls_sem_politica": 5
+  },
+  "power_query_executado": false,
+  "relacionamentos_no_power_bi_criados": false
+}
