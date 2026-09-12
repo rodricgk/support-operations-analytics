@@ -1,0 +1,11 @@
+// Criar cada medida separadamente na tabela Chamados. Não é uma consulta EVALUATE.
+Total de Chamados = COUNTROWS(Chamados)
+
+Chamados Elegiveis Duracao =
+CALCULATE([Total de Chamados], Chamados[elegivel_duracao] = TRUE())
+
+Mediana Duracao Horas =
+CALCULATE(MEDIAN(Chamados[duracao_resolucao_horas]), Chamados[elegivel_duracao] = TRUE())
+
+P90 Duracao Horas =
+CALCULATE(PERCENTILE.INC(Chamados[duracao_resolucao_horas], 0.9), Chamados[elegivel_duracao] = TRUE())

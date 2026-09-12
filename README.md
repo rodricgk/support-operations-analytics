@@ -67,7 +67,7 @@ Idade da fila implementada em `scripts/10_idade_fila_diaria.py` e `sql/05_idade_
 
 ## Entregas previstas
 
-Modelo de leitura para Power BI preparado: quatro views privadas, calendário de 731 dias e exportação local sem senha. Execute `scripts/11_preparar_power_bi.py` e siga o [guia de importação e relacionamentos](docs/modelo-power-bi.md). Nove verificações SQL passaram; o arquivo Power BI e a execução das consultas M ainda estão pendentes.
+Modelo de leitura para Power BI preparado: quatro views privadas, calendário de 731 dias e exportação local sem senha. Execute `scripts/11_preparar_power_bi.py` e siga o [guia de importação e relacionamentos](docs/modelo-power-bi.md). Nove verificações SQL passaram. As consultas M foram importadas e as páginas Duração e Fila foram construídas no Desktop. Veja [medidas DAX, regras e conferências do relatório](docs/relatorio-power-bi.md). O [arquivo PBIX](power_bi/support-operations-analytics.pbix) está salvo no projeto, com integridade do contêiner conferida. [PDF de apresentação](power_bi/support-operations-analytics.pdf) e imagens das duas páginas foram revisados. A conferência das fórmulas nativas permanece pendente.
 
 - Preparação reproduzível em Python.
 - Estrutura e consultas SQL no Supabase.
@@ -78,3 +78,11 @@ Modelo de leitura para Power BI preparado: quatro views privadas, calendário de
 ## Roteiro
 
 Consulte [o plano](docs/plano.md), [a primeira sessão](docs/primeira-sessao.md) e [o diário de aprendizado](docs/diario.md).
+
+## Prévia do relatório
+
+Duração com todos os meses; Fila no intervalo de 01/01/2016 a 16/03/2016. Base histórica estática. O PDF contém apenas as linhas visíveis das tabelas; o PBIX permite navegar pelo detalhamento completo.
+
+![Duração dos chamados](docs/imagens/duracao.png)
+
+![Fila de suporte](docs/imagens/fila.png)

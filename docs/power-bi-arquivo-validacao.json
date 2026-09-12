@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-12",
+  "file": "power_bi/support-operations-analytics.pbix",
+  "bytes": 3298073,
+  "sha256": "b2b4d41f410a5e7757429322f8a79ca52e80ed1baf4e09bf3fcbc64c656a85f9",
+  "zip_integrity": "OK",
+  "pages": [
+    {
+      "name": "4fa5fcd20cc308cec502",
+      "displayName": "Duração",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "name": "26019c75e48b784e352a",
+      "displayName": "Fila",
+      "width": 1280,
+      "height": 720
+    }
+  ],
+  "limits": "Inspeção do contêiner e metadados de páginas. DataModel não decodificado; fórmulas DAX nativas e resultados não auditados por esta verificação."
+}

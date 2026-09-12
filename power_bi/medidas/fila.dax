@@ -1,0 +1,47 @@
+// Criar cada medida separadamente na tabela Fotografias. Não é uma consulta EVALUATE.
+Fila Diaria =
+VAR Dia = SELECTEDVALUE(Calendario[data])
+VAR DiaElegivel = SELECTEDVALUE(Calendario[data_fotografia_elegivel], FALSE())
+RETURN
+    IF(
+        NOT ISBLANK(Dia) && DiaElegivel,
+        COALESCE(
+            CALCULATE(COUNTROWS(Fotografias), Fotografias[classe_estado] = "pendente"),
+            0
+        )
+    )
+
+Mediana Idade Fila Horas =
+VAR Dia = SELECTEDVALUE(Calendario[data])
+VAR DiaElegivel = SELECTEDVALUE(Calendario[data_fotografia_elegivel], FALSE())
+RETURN
+    IF(
+        NOT ISBLANK(Dia) && DiaElegivel,
+        CALCULATE(
+            MEDIAN(Fotografias[idade_horas]),
+            Fotografias[classe_estado] = "pendente",
+            Fotografias[idade_valida] = TRUE()
+        )
+    )
+
+Data Referencia Fila =
+CALCULATE(
+    MAX(Calendario[data]),
+    KEEPFILTERS(Calendario[data_fotografia_elegivel] = TRUE())
+)
+
+Fila Fim do Periodo =
+VAR Dia = [Data Referencia Fila]
+RETURN
+    IF(
+        NOT ISBLANK(Dia),
+        CALCULATE([Fila Diaria], KEEPFILTERS(Calendario[data] = Dia))
+    )
+
+Mediana Idade Fim do Periodo Horas =
+VAR Dia = [Data Referencia Fila]
+RETURN
+    IF(
+        NOT ISBLANK(Dia),
+        CALCULATE([Mediana Idade Fila Horas], KEEPFILTERS(Calendario[data] = Dia))
+    )

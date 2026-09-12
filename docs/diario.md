@@ -125,3 +125,16 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Documentados relacionamentos por resolução e fotografia, com abertura inativa. Chamados e Fotografias permanecem sem relação direta no modelo BI.
 - Os 1.556 chamados sem resolução informada foram preservados; um filtro por resolução exige atenção ao denominador da qualidade.
 - Power Query e relacionamentos ainda precisam de execução no Power BI Desktop. Próximo passo: importar, conferir o modelo e construir as primeiras medidas DAX juntos.
+
+## 12/09/2026 — relatório Power BI e documentação das medidas
+
+- Importadas as quatro tabelas localmente e configurados os relacionamentos por calendário no Desktop, com orientação durante a sessão.
+- Construídas páginas Duração e Fila, com medidas DAX, filtros, cartões, gráficos e tabelas. Layout alinhado em 1280 × 720.
+- Conferidos resultados gerais, meses específicos, zeros, ausência de cobertura e interação por prioridade; natureza de cada evidência registrada em relatorio-power-bi.md.
+- Registradas nove medidas em power_bi/medidas, como referência textual da sessão, sem exportação automatizada do modelo nativo.
+- Atualizado o estado da documentação. JSON da preparação preservado como evidência histórica daquela etapa.
+- Pendente: salvar o PBIX no repositório, conferir fórmulas nativas e guardar imagens finais. Sem nova conexão ou alteração no Supabase.
+
+- Entrega posterior na mesma sessão: PBIX salvo pelo autor no projeto, 3.298.073 bytes; ZIP íntegro e metadados das páginas conferidos. Evidência em power-bi-arquivo-validacao.json. Fórmulas nativas ainda não auditadas.
+
+- PDF de duas páginas salvo pelo autor e revisado por renderização: Duração sem filtro mensal e Fila até 16/03/2016. Imagens incorporadas ao README. Exportação estática preserva somente as linhas visíveis das tabelas; evidência em power-bi-pdf-validacao.json.

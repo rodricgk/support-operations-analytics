@@ -1,6 +1,6 @@
 # Dicionário de indicadores — versão 0.1
 
-Status em 11/09/2026: os três indicadores principais foram implementados. Modelo local e Supabase reconciliados; duração conferida na etapa 09 e idade diária na etapa 10 (355 dias, dois cenários). Veja indicadores-duracao.md e idade-fila.md. Modelagem e conexão de leitura do Power BI são a próxima etapa.
+Status em 11/09/2026: os três indicadores principais foram implementados. Modelo local e Supabase reconciliados; duração conferida na etapa 09 e idade diária na etapa 10 (355 dias, dois cenários). Veja indicadores-duracao.md e idade-fila.md. Atualização em 12/09/2026: modelo e medidas implementados manualmente no Power BI por importação local. Consulte relatorio-power-bi.md para os filtros, conferências e arquivos DAX; conexão direta ao banco segue pendente.
 
 ## Decisão e público
 

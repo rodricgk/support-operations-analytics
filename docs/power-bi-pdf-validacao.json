@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-12",
+  "file": "power_bi/support-operations-analytics.pdf",
+  "bytes": 156915,
+  "sha256": "a74010c387ad124004d4d3c4b690a366a40a06ef4c80538530dd4470335923cb",
+  "pages": 2,
+  "visual_review": "Duas páginas renderizadas e inspecionadas; títulos, cartões e prioridades legíveis, sem sobreposição observada.",
+  "filters": {
+    "Duracao": "Todos os meses",
+    "Fila": "01/01/2016 a 16/03/2016"
+  },
+  "limitation": "PDF estático contém apenas as linhas visíveis do detalhamento diário (16 a 13/03/2016). Histórico completo requer interação no PBIX. A revisão não valida fórmulas do DataModel."
+}

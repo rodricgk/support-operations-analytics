@@ -2,7 +2,7 @@
 
 ## O que está pronto
 
-Quatro views privadas criadas no Supabase e quatro CSVs locais preparados. Nove verificações SQL passaram; os arquivos locais passaram pela conferência de chaves, cobertura de datas e leitura após gravação. O relatório `.pbix`, a execução das consultas M e os relacionamentos dentro do Power BI ainda não foram realizados.
+Quatro views privadas criadas no Supabase e quatro CSVs locais preparados. Nove verificações SQL passaram; os arquivos locais passaram pela conferência de chaves, cobertura de datas e leitura após gravação. Atualização em 12/09/2026: importação local, relacionamentos e páginas Duração/Fila foram realizados manualmente no Desktop. Veja [medidas, conferências e pendências de entrega](relatorio-power-bi.md). O PBIX está salvo na pasta power_bi; a conferência das fórmulas do modelo nativo segue pendente.
 
 | Power BI / arquivo CSV | View em analytics | Grão | Linhas atuais |
 |---|---|---|---:|
@@ -44,7 +44,7 @@ O calendário abrange anos completos, de 01/01/2016 a 31/12/2017. Ele é gerado 
 
 A coluna `data_fotografia_elegivel` é verdadeira apenas nos 355 dias de 29/02/2016 a 17/02/2017. Fora desse domínio, ausência de linhas significa falta de cobertura, não fila zero. A flag não deve ser um filtro global da página de duração: isso confundiria a cobertura das duas análises.
 
-Dentro do domínio observado, 14/02/2017 e 17/02/2017 têm fila zero. Para cartões de fila em um período, a futura medida deve usar a última **data elegível selecionada**, inclusive se vazia. Se nenhuma data selecionada for elegível, retornar em branco. Não buscar a última data com pendentes, somar estoques diários ou tirar média das medianas.
+Dentro do domínio observado, 14/02/2017 e 17/02/2017 têm fila zero. Para cartões de fila em um período, a medida usa a última **data elegível selecionada**, inclusive se vazia. Se nenhuma data selecionada for elegível, retornar em branco. Não buscar a última data com pendentes, somar estoques diários ou tirar média das medianas.
 
 Os 1.556 chamados sem resolução informada permanecem em Chamados com `data_resolucao` nula. Ao filtrar um período pela relação ativa, eles saem daquele recorte. O cartão de qualidade global deverá ignorar explicitamente o filtro de data e ser identificado como referente à extração inteira.
 
@@ -63,7 +63,7 @@ Os 1.556 chamados sem resolução informada permanecem em Chamados com `data_res
 6. Configure identificadores (`number`, `linha_csv`, `linha_csv_final`) como **Não resumir**. Oculte campos técnicos dos usuários do relatório, mantendo-os no modelo. Use `Calendario[ano_mes]` nos eixos mensais; o formato YYYY-MM já ordena cronologicamente.
 7. Salve em `power_bi/support-operations-analytics.pbix`. Confira erros de carregamento e as contagens da tabela inicial antes de criar medidas.
 
-Os textos M foram gerados e revisados; não foram executados no Power BI nesta etapa. Caso uma conversão falhe, investigar o valor original, sem substituir silenciosamente por zero.
+Os textos M foram gerados e revisados na preparação; a importação manual no Power BI foi concluída posteriormente, conforme o registro do relatório. Caso uma conversão falhe, investigar o valor original, sem substituir silenciosamente por zero.
 
 ## Cuidados com os primeiros visuais
 
