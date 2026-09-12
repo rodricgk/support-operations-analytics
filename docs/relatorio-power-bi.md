@@ -2,9 +2,9 @@
 
 ## Estado em 12/09/2026
 
-Relatório construído manualmente por Rodrigo Fernandes no Power BI Desktop, com importação local das quatro consultas M e configuração dos relacionamentos descritos em [modelo-power-bi.md](modelo-power-bi.md). As capturas e confirmações da sessão mostram as duas páginas funcionando. Não houve inspeção automatizada do modelo nativo nem execução de testes DAX por ferramenta nesta etapa.
+Relatório construído manualmente por Rodrigo Fernandes no Power BI Desktop, com importação local das quatro consultas M e configuração dos relacionamentos descritos em [modelo-power-bi.md](modelo-power-bi.md). As capturas e confirmações da sessão mostram as duas páginas funcionando. O PBIP foi inspecionado: nove fórmulas nativas conferidas por comparação textual, relacionamentos e metadados revisados. Não foram executadas novas consultas DAX por ferramenta nesta etapa.
 
-Arquivo salvo e conferido em `power_bi/support-operations-analytics.pbix` (3.298.073 bytes). Contêiner ZIP íntegro; metadados das duas páginas inspecionados, conforme [evidência do arquivo](power-bi-arquivo-validacao.json). O DataModel binário não foi decodificado: a conferência das fórmulas nativas ainda está pendente. PDF de duas páginas e imagens finais salvos e revisados visualmente; veja [evidência da exportação](power-bi-pdf-validacao.json). Desativação de Data/hora automática e ocultação de campos técnicos ainda não foram confirmadas.
+Arquivo salvo e conferido em `power_bi/support-operations-analytics.pbix` (3.254.315 bytes). Contêiner ZIP íntegro; metadados das duas páginas inspecionados, conforme [evidência do arquivo](power-bi-arquivo-validacao.json). As fórmulas foram conferidas posteriormente no PBIP. A cópia PBIX foi salva novamente pelo autor após os ajustes do modelo; suas definições de relatório coincidem com as do PBIP. PDF de duas páginas e imagens finais salvos e revisados visualmente; veja [evidência da exportação](power-bi-pdf-validacao.json). Data/hora automática desativada e identificadores linha_csv/linha_csv_final ocultos e sem resumo, confirmados no PBIP.
 
 ## Medidas para reprodução
 
@@ -70,7 +70,15 @@ Base pública histórica e estática: não representa monitoramento atual. A que
 
 ## Pendências de entrega
 
-1. Conferir as fórmulas do modelo nativo contra os arquivos DAX; PBIX já salvo na pasta do projeto.
+1. PBIX atualizado a partir do projeto revisado; integridade e definições do relatório conferidas.
 2. Exportação visual concluída: [PDF](../power_bi/support-operations-analytics.pdf), [Duração](imagens/duracao.png) e [Fila](imagens/fila.png). Duração usa todos os meses; Fila usa 01/01/2016 a 16/03/2016. O PDF mostra somente as linhas visíveis do detalhamento, não o histórico completo.
-3. Confirmar as opções de calendário e campos técnicos ainda não verificadas.
+3. Fórmulas, calendário e os dois identificadores técnicos conferidos no PBIP; evidência em power-bi-modelo-validacao.json.
 4. Preparar a apresentação do portfólio após incorporar esses artefatos. Conexão direta ao Supabase permanece uma etapa separada.
+
+## Atualização: calendário automático removido
+
+Conferido no PBIP salvo: Data/hora automática desativada, somente Calendario, Chamados, Fotografias e ResumoDiario, com os quatro relacionamentos planejados. As nove fórmulas nativas foram comparadas com a referência textual e coincidem, ignorando espaços. Esta conferência estática resolve as pendências anteriores de leitura das fórmulas e calendário automático; não executa novos cálculos DAX. Evidência em power-bi-modelo-validacao.json. Os identificadores Chamados[linha_csv_final] e Fotografias[linha_csv] também foram conferidos: ocultos e com summarizeBy: none.
+
+## Abrir e reproduzir o projeto PBIP
+
+Abra `power_bi/support-operations-analytics.pbip` no Power BI Desktop. As pastas Report e SemanticModel precisam permanecer ao lado desse arquivo. O parâmetro PastaDados contém o caminho desta máquina: ajuste-o no Power Query para sua pasta data/processed/power_bi após gerar os CSVs pelo script 11. Em um clone sem cache local, será necessário atualizar os dados. Os caches e preferências locais .pbi são ignorados no Git. Para visualizar os dados já incorporados, use a cópia PBIX.

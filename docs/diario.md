@@ -138,3 +138,7 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Entrega posterior na mesma sessão: PBIX salvo pelo autor no projeto, 3.298.073 bytes; ZIP íntegro e metadados das páginas conferidos. Evidência em power-bi-arquivo-validacao.json. Fórmulas nativas ainda não auditadas.
 
 - PDF de duas páginas salvo pelo autor e revisado por renderização: Duração sem filtro mensal e Fila até 16/03/2016. Imagens incorporadas ao README. Exportação estática preserva somente as linhas visíveis das tabelas; evidência em power-bi-pdf-validacao.json.
+
+- PBIP revisado: nove fórmulas nativas coincidem com as referências, quatro relações planejadas e Calendario marcado. Desativados calendários automáticos; linha_csv e linha_csv_final ocultos e sem resumo, conferidos nos arquivos. Falta atualizar a cópia PBIX com os ajustes.
+
+- Cópia PBIX atualizada após a revisão, íntegra e com definições de relatório iguais ao PBIP. Projeto textual preparado para Git; caches e preferências .pbi excluídos do versionamento.

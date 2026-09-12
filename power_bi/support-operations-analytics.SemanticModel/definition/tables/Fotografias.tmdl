@@ -1,0 +1,234 @@
+table Fotografias
+	lineageTag: 3407d497-8750-4ada-8545-150655cf0b12
+
+	measure 'Fila Diaria' =
+			
+			VAR Dia = SELECTEDVALUE(Calendario[data])
+			VAR DiaElegivel =
+			    SELECTEDVALUE(Calendario[data_fotografia_elegivel], FALSE())
+			RETURN
+			    IF(
+			        NOT ISBLANK(Dia) && DiaElegivel,
+			        COALESCE(
+			            CALCULATE(
+			                COUNTROWS(Fotografias),
+			                Fotografias[classe_estado] = "pendente"
+			            ),
+			            0
+			        )
+			    )
+		formatString: 0
+		lineageTag: d8b0efcd-fec8-4546-a9dd-18051753d92a
+
+	measure 'Mediana Idade Fila Horas' =
+			
+			VAR Dia = SELECTEDVALUE(Calendario[data])
+			VAR DiaElegivel =
+			    SELECTEDVALUE(Calendario[data_fotografia_elegivel], FALSE())
+			RETURN
+			    IF(
+			        NOT ISBLANK(Dia) && DiaElegivel,
+			        CALCULATE(
+			            MEDIAN(Fotografias[idade_horas]),
+			            Fotografias[classe_estado] = "pendente",
+			            Fotografias[idade_valida] = TRUE()
+			        )
+			    )
+		lineageTag: d5130674-d8ad-4c5e-b8c0-1f0908fc56ea
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Data Referencia Fila' =
+			
+			CALCULATE(
+			    MAX(Calendario[data]),
+			    KEEPFILTERS(Calendario[data_fotografia_elegivel] = TRUE())
+			)
+		formatString: Short Date
+		lineageTag: bafc1276-6c08-483e-be36-9aed193cd476
+
+	measure 'Fila Fim do Periodo' =
+			
+			VAR Dia = [Data Referencia Fila]
+			RETURN
+			    IF(
+			        NOT ISBLANK(Dia),
+			        CALCULATE(
+			            [Fila Diaria],
+			            KEEPFILTERS(Calendario[data] = Dia)
+			        )
+			    )
+		formatString: 0
+		lineageTag: 260e0633-26eb-489d-886d-ad6303851247
+
+	measure 'Mediana Idade Fim do Periodo Horas' =
+			
+			VAR Dia = [Data Referencia Fila]
+			RETURN
+			    IF(
+			        NOT ISBLANK(Dia),
+			        CALCULATE(
+			            [Mediana Idade Fila Horas],
+			            KEEPFILTERS(Calendario[data] = Dia)
+			        )
+			    )
+		lineageTag: 89d80836-8034-4fa4-87f2-71c29ae4744d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3427c904-3e3e-490d-b8c8-c343d78bab89
+		summarizeBy: none
+		sourceColumn: data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column number
+		dataType: string
+		lineageTag: f891a12a-0ad6-4f9e-823b-0af058908549
+		summarizeBy: none
+		sourceColumn: number
+
+		annotation SummarizationSetBy = Automatic
+
+	column linha_csv
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 85bc63e9-9162-4022-9549-f6e38ea31e6e
+		summarizeBy: none
+		sourceColumn: linha_csv
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column atualizacao
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 49cff94f-56e6-4314-a447-7582c9f3ce72
+		summarizeBy: none
+		sourceColumn: atualizacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column incident_state
+		dataType: string
+		lineageTag: a5e64ee4-04ce-4c8a-a922-2ba508688801
+		summarizeBy: none
+		sourceColumn: incident_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column classe_estado
+		dataType: string
+		lineageTag: 7051dcd2-e8cd-4102-94cb-2d1924d0a513
+		summarizeBy: none
+		sourceColumn: classe_estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 6eb42e7c-029d-4868-95f7-3e9c7e308560
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column subcategory
+		dataType: string
+		lineageTag: 55067149-303a-48b1-84e9-134145c36feb
+		summarizeBy: none
+		sourceColumn: subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column priority
+		dataType: string
+		lineageTag: 18dda838-d9d9-4545-99a6-b5bfd33cd4d2
+		summarizeBy: none
+		sourceColumn: priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column assignment_group
+		dataType: string
+		lineageTag: f1d9799f-c6c2-4b86-abbd-d5956f058337
+		summarizeBy: none
+		sourceColumn: assignment_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column sinalizado_temporal
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8381d3dc-72bb-4a76-9655-2cf7b561f677
+		summarizeBy: none
+		sourceColumn: sinalizado_temporal
+
+		annotation SummarizationSetBy = Automatic
+
+	column opened_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a7da8b89-8afe-44cd-b82d-a574d41f8596
+		summarizeBy: none
+		sourceColumn: opened_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column idade_valida
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 31f6719f-40ab-496f-82b0-4d5b51e1e5a0
+		summarizeBy: none
+		sourceColumn: idade_valida
+
+		annotation SummarizationSetBy = Automatic
+
+	column idade_horas
+		dataType: double
+		lineageTag: f04a8b94-dd4d-47a9-ba42-b110ed5c563e
+		summarizeBy: sum
+		sourceColumn: idade_horas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Fotografias = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents(PastaDados & "Fotografias.csv"),
+				        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    Nulos = Table.ReplaceValue(Cabecalhos, "", null, Replacer.ReplaceValue, Table.ColumnNames(Cabecalhos)),
+				    Tipos = Table.TransformColumnTypes(Nulos, {
+				        {"data", type date},
+				        {"number", type text},
+				        {"linha_csv", Int64.Type},
+				        {"atualizacao", type datetime},
+				        {"incident_state", type text},
+				        {"classe_estado", type text},
+				        {"category", type text},
+				        {"subcategory", type text},
+				        {"priority", type text},
+				        {"assignment_group", type text},
+				        {"sinalizado_temporal", type logical},
+				        {"opened_at", type datetime},
+				        {"idade_valida", type logical},
+				        {"idade_horas", type number}
+				    }, "en-US")
+				in
+				    Tipos
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

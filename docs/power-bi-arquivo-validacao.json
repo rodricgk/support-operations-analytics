@@ -1,8 +1,8 @@
 {
   "date": "2026-09-12",
   "file": "power_bi/support-operations-analytics.pbix",
-  "bytes": 3298073,
-  "sha256": "b2b4d41f410a5e7757429322f8a79ca52e80ed1baf4e09bf3fcbc64c656a85f9",
+  "bytes": 3254315,
+  "sha256": "bb7ed36ada93260eb928ca4ba78b873ed51574b23b8800f5c8140e7b20ba28d7",
   "zip_integrity": "OK",
   "pages": [
     {
@@ -18,5 +18,6 @@
       "height": 720
     }
   ],
-  "limits": "Inspeção do contêiner e metadados de páginas. DataModel não decodificado; fórmulas DAX nativas e resultados não auditados por esta verificação."
+  "limits": "ZIP e definições do relatório conferidos. Fórmulas e metadados semânticos auditados no PBIP separado, não no DataModel binário. PBIX salvo novamente pelo autor após ajustes.",
+  "report_json_files_equal_to_pbip": 21
 }

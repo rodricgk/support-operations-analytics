@@ -8,7 +8,8 @@ __pycache__/
 .ipynb_checkpoints/
 data/raw/
 data/processed/
-.pbi/localSettings.json
-.pbi/cache.abf
-.pbi/unappliedChanges.json
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+**/.pbi/unappliedChanges.json
 *.log
+**/.pbi/editorSettings.json

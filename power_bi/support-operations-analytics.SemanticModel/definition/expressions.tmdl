@@ -1,0 +1,11 @@
+expression PastaDados =
+		let
+		    Fonte = "C:\Users\rodri\Documents\Codex\2026-09-07\cha\outputs\support-operations-analytics\data\processed\power_bi\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+		in
+		    Fonte
+	lineageTag: b0cdaaa3-e1fa-4027-8812-8ce49efd5935
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Text
+

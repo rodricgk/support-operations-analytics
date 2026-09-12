@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "d69f8f7a603b50748229",
+  "position": {
+    "x": 24,
+    "y": 104,
+    "z": 3000,
+    "height": 112,
+    "width": 400,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fotografias"
+                    }
+                  },
+                  "Property": "Fila Fim do Periodo"
+                }
+              },
+              "queryRef": "Fotografias.Fila Fim do Periodo",
+              "nativeQueryRef": "Pendentes na data de referência",
+              "displayName": "Pendentes na data de referência"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fotografias"
+                  }
+                },
+                "Property": "Fila Fim do Periodo"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "32D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fotografias.Fila Fim do Periodo"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

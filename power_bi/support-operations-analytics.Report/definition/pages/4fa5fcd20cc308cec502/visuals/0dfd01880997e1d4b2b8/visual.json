@@ -1,0 +1,208 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "0dfd01880997e1d4b2b8",
+  "position": {
+    "x": 24,
+    "y": 476,
+    "z": 4000,
+    "height": 184,
+    "width": 1232,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Chamados"
+                    }
+                  },
+                  "Property": "priority_final"
+                }
+              },
+              "queryRef": "Chamados.priority_final",
+              "nativeQueryRef": "Prioridade final",
+              "displayName": "Prioridade final"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Chamados"
+                    }
+                  },
+                  "Property": "Total de Chamados"
+                }
+              },
+              "queryRef": "Chamados.Total de Chamados",
+              "nativeQueryRef": "Total de chamados",
+              "displayName": "Total de chamados"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Chamados"
+                    }
+                  },
+                  "Property": "Chamados Elegiveis Duracao"
+                }
+              },
+              "queryRef": "Chamados.Chamados Elegiveis Duracao",
+              "nativeQueryRef": "Duração válida",
+              "displayName": "Duração válida"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Chamados"
+                    }
+                  },
+                  "Property": "Mediana Duracao Horas"
+                }
+              },
+              "queryRef": "Chamados.Mediana Duracao Horas",
+              "nativeQueryRef": "Mediana (h)",
+              "displayName": "Mediana (h)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Chamados"
+                    }
+                  },
+                  "Property": "P90 Duracao Horas"
+                }
+              },
+              "queryRef": "Chamados.P90 Duracao Horas",
+              "nativeQueryRef": "P90 (h)",
+              "displayName": "P90 (h)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Chamados"
+                  }
+                },
+                "Property": "priority_final"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "144.99999169589884D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Chamados.priority_final"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "132.70173049087117D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Chamados.Total de Chamados"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "129.14284786180414D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Chamados.Chamados Elegiveis Duracao"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110.73405112538022D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Chamados.Mediana Duracao Horas"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "89.28567012304217D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Chamados.P90 Duracao Horas"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

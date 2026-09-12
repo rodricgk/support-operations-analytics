@@ -1,0 +1,76 @@
+table Calendario
+	lineageTag: e687bd92-14af-4a5c-add9-126f00350f82
+	dataCategory: Time
+
+	column data
+		dataType: dateTime
+		isKey
+		formatString: dd/mm/yyyy
+		lineageTag: afd2e0ee-eb68-47cd-9c62-31ee97d38b6c
+		summarizeBy: none
+		sourceColumn: data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column ano
+		dataType: int64
+		formatString: 0
+		lineageTag: 6726c70b-5873-4de2-880f-8b1e4a19d363
+		summarizeBy: sum
+		sourceColumn: ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a02bda8-ebeb-4802-9374-050cb705a315
+		summarizeBy: sum
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column ano_mes
+		dataType: string
+		lineageTag: 339fdae4-3d4b-4e13-8f55-481945bf4bf4
+		summarizeBy: none
+		sourceColumn: ano_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_fotografia_elegivel
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 833add99-55c8-4b12-85ac-7bf8b62437e4
+		summarizeBy: none
+		sourceColumn: data_fotografia_elegivel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendario = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(
+				        File.Contents(PastaDados & "Calendario.csv"),
+				        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]
+				    ),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    Tipos = Table.TransformColumnTypes(Cabecalhos, {
+				        {"data", type date},
+				        {"ano", Int64.Type},
+				        {"mes", Int64.Type},
+				        {"ano_mes", type text},
+				        {"data_fotografia_elegivel", type logical}
+				    }, "en-US")
+				in
+				    Tipos
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

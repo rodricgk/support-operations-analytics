@@ -1,0 +1,108 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "8dc78e406dad0c24700b",
+  "position": {
+    "x": 840,
+    "y": 236,
+    "z": 6000,
+    "height": 240,
+    "width": 416,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fotografias"
+                    }
+                  },
+                  "Property": "priority"
+                }
+              },
+              "queryRef": "Fotografias.priority",
+              "nativeQueryRef": "Prioridade",
+              "displayName": "Prioridade"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fotografias"
+                    }
+                  },
+                  "Property": "Fila Fim do Periodo"
+                }
+              },
+              "queryRef": "Fotografias.Fila Fim do Periodo",
+              "nativeQueryRef": "Pendentes",
+              "displayName": "Pendentes"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fotografias"
+                    }
+                  },
+                  "Property": "Mediana Idade Fim do Periodo Horas"
+                }
+              },
+              "queryRef": "Fotografias.Mediana Idade Fim do Periodo Horas",
+              "nativeQueryRef": "Idade mediana (h)",
+              "displayName": "Idade mediana (h)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fotografias"
+                  }
+                },
+                "Property": "priority"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Pendentes por prioridade na data de referência'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

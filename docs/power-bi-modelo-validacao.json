@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-12",
+  "method": "Comparação textual das nove fórmulas nativas TMDL, ignorando espaços e quebras de linha; sem execução de consultas DAX.",
+  "measures": [
+    {
+      "measure": "Total de Chamados",
+      "matches": true
+    },
+    {
+      "measure": "Chamados Elegiveis Duracao",
+      "matches": true
+    },
+    {
+      "measure": "Mediana Duracao Horas",
+      "matches": true
+    },
+    {
+      "measure": "P90 Duracao Horas",
+      "matches": true
+    },
+    {
+      "measure": "Fila Diaria",
+      "matches": true
+    },
+    {
+      "measure": "Mediana Idade Fila Horas",
+      "matches": true
+    },
+    {
+      "measure": "Data Referencia Fila",
+      "matches": true
+    },
+    {
+      "measure": "Fila Fim do Periodo",
+      "matches": true
+    },
+    {
+      "measure": "Mediana Idade Fim do Periodo Horas",
+      "matches": true
+    }
+  ],
+  "calendar_marked": true,
+  "relationships": "Somente os quatro planejados presentes; abertura inativa.",
+  "pending": [],
+  "automatic_date_tables": 0,
+  "automatic_date_time_enabled": false,
+  "technical_identifiers": {
+    "Chamados.linha_csv_final": {
+      "hidden": true,
+      "summarizeBy": "none"
+    },
+    "Fotografias.linha_csv": {
+      "hidden": true,
+      "summarizeBy": "none"
+    }
+  },
+  "pbix_delivery": "Cópia PBIX salva pelo autor após ajustes; contêiner e definições do relatório conferidos."
+}

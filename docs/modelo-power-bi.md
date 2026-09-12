@@ -2,7 +2,7 @@
 
 ## O que está pronto
 
-Quatro views privadas criadas no Supabase e quatro CSVs locais preparados. Nove verificações SQL passaram; os arquivos locais passaram pela conferência de chaves, cobertura de datas e leitura após gravação. Atualização em 12/09/2026: importação local, relacionamentos e páginas Duração/Fila foram realizados manualmente no Desktop. Veja [medidas, conferências e pendências de entrega](relatorio-power-bi.md). O PBIX está salvo na pasta power_bi; a conferência das fórmulas do modelo nativo segue pendente.
+Quatro views privadas criadas no Supabase e quatro CSVs locais preparados. Nove verificações SQL passaram; os arquivos locais passaram pela conferência de chaves, cobertura de datas e leitura após gravação. Atualização em 12/09/2026: importação local, relacionamentos e páginas Duração/Fila foram realizados manualmente no Desktop. Veja [medidas, conferências e pendências de entrega](relatorio-power-bi.md). O PBIX está salvo na pasta power_bi; as nove fórmulas foram conferidas no PBIP, que contém os ajustes mais recentes do modelo.
 
 | Power BI / arquivo CSV | View em analytics | Grão | Linhas atuais |
 |---|---|---|---:|

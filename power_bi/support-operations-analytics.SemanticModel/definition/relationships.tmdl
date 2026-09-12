@@ -1,0 +1,17 @@
+relationship fdce7737-f21b-ceb1-37c6-4437b02e8693
+	fromColumn: Chamados.data_resolucao
+	toColumn: Calendario.data
+
+relationship c4dbcd97-04c6-93a6-783a-be0409e50f3d
+	fromColumn: Fotografias.data
+	toColumn: Calendario.data
+
+relationship 88d86e51-06a4-74bc-90f6-096a4855f0a0
+	fromColumn: ResumoDiario.data
+	toColumn: Calendario.data
+
+relationship cbe7c383-d28a-d582-59a0-3be1f7e57494
+	isActive: false
+	fromColumn: Chamados.data_abertura
+	toColumn: Calendario.data
+

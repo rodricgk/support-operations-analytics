@@ -1,0 +1,308 @@
+table Chamados
+	lineageTag: 9785aac7-eba4-4c66-8066-90636b593f6e
+
+	measure 'Total de Chamados' = COUNTROWS(Chamados)
+		formatString: 0
+		lineageTag: d5630fba-5f74-4e81-8de9-7561d07ba42d
+
+	measure 'Chamados Elegiveis Duracao' =
+			
+			CALCULATE(
+			    [Total de Chamados],
+			    Chamados[elegivel_duracao] = TRUE()
+			)
+		formatString: 0
+		lineageTag: f1ef6324-87b3-4574-ac5d-f5d43156514a
+
+	measure 'Mediana Duracao Horas' =
+			
+			CALCULATE(
+			    MEDIAN(Chamados[duracao_resolucao_horas]),
+			    Chamados[elegivel_duracao] = TRUE()
+			)
+		lineageTag: 84de90d1-0b57-40f2-bc64-efc285136901
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'P90 Duracao Horas' =
+			
+			CALCULATE(
+			    PERCENTILE.INC(
+			        Chamados[duracao_resolucao_horas],
+			        0.9
+			    ),
+			    Chamados[elegivel_duracao] = TRUE()
+			)
+		lineageTag: bc7afb63-9f19-4f9e-bec9-84cb9083a617
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column number
+		dataType: string
+		lineageTag: 03752701-e51b-4837-8483-6015db36e7bd
+		summarizeBy: none
+		sourceColumn: number
+
+		annotation SummarizationSetBy = Automatic
+
+	column linha_csv_final
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3082465d-ef2b-44b0-bd1c-4c76bddd70ab
+		summarizeBy: none
+		sourceColumn: linha_csv_final
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column atualizacao_final
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 138de482-f294-4d9a-8123-5beae3370576
+		summarizeBy: none
+		sourceColumn: atualizacao_final
+
+		annotation SummarizationSetBy = Automatic
+
+	column incident_state_final
+		dataType: string
+		lineageTag: fa9844db-c0ec-45ed-b144-e6c1f450ce26
+		summarizeBy: none
+		sourceColumn: incident_state_final
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_final
+		dataType: string
+		lineageTag: 08f751fd-d950-442a-a550-b6cbecb70d10
+		summarizeBy: none
+		sourceColumn: category_final
+
+		annotation SummarizationSetBy = Automatic
+
+	column subcategory_final
+		dataType: string
+		lineageTag: a433dbbc-8143-4153-8ab7-152db5ebdd7f
+		summarizeBy: none
+		sourceColumn: subcategory_final
+
+		annotation SummarizationSetBy = Automatic
+
+	column priority_final
+		dataType: string
+		lineageTag: 73b55c24-06d3-4504-9ccb-48ed96ffa611
+		summarizeBy: none
+		sourceColumn: priority_final
+
+		annotation SummarizationSetBy = Automatic
+
+	column assignment_group_final
+		dataType: string
+		lineageTag: 5bd22e2f-e19d-4f95-919c-efbf74bc78cb
+		summarizeBy: none
+		sourceColumn: assignment_group_final
+
+		annotation SummarizationSetBy = Automatic
+
+	column reopen_count_final
+		dataType: int64
+		formatString: 0
+		lineageTag: a5042ccc-87aa-4547-ba9e-4843028a4c99
+		summarizeBy: sum
+		sourceColumn: reopen_count_final
+
+		annotation SummarizationSetBy = Automatic
+
+	column reassignment_count_final
+		dataType: int64
+		formatString: 0
+		lineageTag: f6c2c9cc-9db5-4524-bfbc-b85b7bafe374
+		summarizeBy: sum
+		sourceColumn: reassignment_count_final
+
+		annotation SummarizationSetBy = Automatic
+
+	column regressao_contador
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ea28b04c-c199-4e15-900a-2701d4c4a08b
+		summarizeBy: none
+		sourceColumn: regressao_contador
+
+		annotation SummarizationSetBy = Automatic
+
+	column evento_antes_abertura
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: af9041ac-c31d-43af-bfb1-4562065f2aae
+		summarizeBy: none
+		sourceColumn: evento_antes_abertura
+
+		annotation SummarizationSetBy = Automatic
+
+	column contador_reutilizado
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bccaa793-d418-41a5-bb24-c576f9ce55c2
+		summarizeBy: none
+		sourceColumn: contador_reutilizado
+
+		annotation SummarizationSetBy = Automatic
+
+	column sinalizado_temporal
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 94707179-3bc9-4daa-8fe4-bdca9066b585
+		summarizeBy: none
+		sourceColumn: sinalizado_temporal
+
+		annotation SummarizationSetBy = Automatic
+
+	column opened_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e06ca26e-164a-497c-b6ed-887848915d3d
+		summarizeBy: none
+		sourceColumn: opened_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column opened_at_conflitante
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: af6367ac-841c-4d9d-b39a-52a5b0ee2164
+		summarizeBy: none
+		sourceColumn: opened_at_conflitante
+
+		annotation SummarizationSetBy = Automatic
+
+	column opened_at_invalida
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2263f6b8-77ba-4a22-9434-67b6c198d346
+		summarizeBy: none
+		sourceColumn: opened_at_invalida
+
+		annotation SummarizationSetBy = Automatic
+
+	column resolved_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 722fc254-9040-44bf-83b3-357e2b5edf54
+		summarizeBy: none
+		sourceColumn: resolved_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column resolved_at_conflitante
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 176e4a26-2951-4aa4-a2ae-ab0a3b0f2ccb
+		summarizeBy: none
+		sourceColumn: resolved_at_conflitante
+
+		annotation SummarizationSetBy = Automatic
+
+	column resolved_at_invalida
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 27a52981-ecaf-46f9-8356-d450f652d459
+		summarizeBy: none
+		sourceColumn: resolved_at_invalida
+
+		annotation SummarizationSetBy = Automatic
+
+	column duracao_negativa
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 72e0c12e-945e-4eb1-916a-713945d0bfd2
+		summarizeBy: none
+		sourceColumn: duracao_negativa
+
+		annotation SummarizationSetBy = Automatic
+
+	column elegivel_duracao
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 32dfe174-d02a-469a-a179-a869f72cd694
+		summarizeBy: none
+		sourceColumn: elegivel_duracao
+
+		annotation SummarizationSetBy = Automatic
+
+	column duracao_resolucao_horas
+		dataType: double
+		lineageTag: d75fe985-c819-4212-beb5-fa1cc9190c81
+		summarizeBy: sum
+		sourceColumn: duracao_resolucao_horas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column data_abertura
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e1b64e0d-f82e-4176-8c2e-1e5c518ccf15
+		summarizeBy: none
+		sourceColumn: data_abertura
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column data_resolucao
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fc81dfaf-4723-468c-84ec-858c211a60d3
+		summarizeBy: none
+		sourceColumn: data_resolucao
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Chamados = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents(PastaDados & "Chamados.csv"),
+				        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    Nulos = Table.ReplaceValue(Cabecalhos, "", null, Replacer.ReplaceValue, Table.ColumnNames(Cabecalhos)),
+				    Tipos = Table.TransformColumnTypes(Nulos, {
+				        {"number", type text},
+				        {"linha_csv_final", Int64.Type},
+				        {"atualizacao_final", type datetime},
+				        {"incident_state_final", type text},
+				        {"category_final", type text},
+				        {"subcategory_final", type text},
+				        {"priority_final", type text},
+				        {"assignment_group_final", type text},
+				        {"reopen_count_final", Int64.Type},
+				        {"reassignment_count_final", Int64.Type},
+				        {"regressao_contador", type logical},
+				        {"evento_antes_abertura", type logical},
+				        {"contador_reutilizado", type logical},
+				        {"sinalizado_temporal", type logical},
+				        {"opened_at", type datetime},
+				        {"opened_at_conflitante", type logical},
+				        {"opened_at_invalida", type logical},
+				        {"resolved_at", type datetime},
+				        {"resolved_at_conflitante", type logical},
+				        {"resolved_at_invalida", type logical},
+				        {"duracao_negativa", type logical},
+				        {"elegivel_duracao", type logical},
+				        {"duracao_resolucao_horas", type number},
+				        {"data_abertura", type date},
+				        {"data_resolucao", type date}
+				    }, "en-US")
+				in
+				    Tipos
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

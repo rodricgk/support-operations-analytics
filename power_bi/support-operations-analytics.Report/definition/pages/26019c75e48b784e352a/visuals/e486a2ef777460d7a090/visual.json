@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "e486a2ef777460d7a090",
+  "position": {
+    "x": 856,
+    "y": 104,
+    "z": 4000,
+    "height": 112,
+    "width": 400,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fotografias"
+                    }
+                  },
+                  "Property": "Data Referencia Fila"
+                }
+              },
+              "queryRef": "Fotografias.Data Referencia Fila",
+              "nativeQueryRef": "Data da fotografia",
+              "displayName": "Data da fotografia"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fotografias"
+                  }
+                },
+                "Property": "Data Referencia Fila"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
