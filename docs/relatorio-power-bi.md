@@ -68,12 +68,14 @@ Duas páginas 1280 × 720, título e filtro no topo, cartões com números em fo
 
 Base pública histórica e estática: não representa monitoramento atual. A queda final da fila e o aumento das durações em meses com poucos casos não demonstram melhora ou piora operacional. Há limitações de cobertura e seleção dos chamados resolvidos. Não existem metas contratuais ou calendário de horas úteis nesta análise. Consulte [duração](indicadores-duracao.md), [idade da fila](idade-fila.md) e [dicionário](dicionario-indicadores.md).
 
-## Pendências de entrega
+## Status da entrega
 
 1. PBIX atualizado a partir do projeto revisado; integridade e definições do relatório conferidas.
 2. Exportação visual concluída: [PDF](../power_bi/support-operations-analytics.pdf), [Duração](imagens/duracao.png) e [Fila](imagens/fila.png). Duração usa todos os meses; Fila usa 01/01/2016 a 16/03/2016. O PDF mostra somente as linhas visíveis do detalhamento, não o histórico completo.
 3. Fórmulas, calendário e os dois identificadores técnicos conferidos no PBIP; evidência em power-bi-modelo-validacao.json.
-4. Preparar a apresentação do portfólio após incorporar esses artefatos. Conexão direta ao Supabase permanece uma etapa separada.
+4. Roteiro de apresentação do portfólio incorporado em [apresentacao-portfolio.md](apresentacao-portfolio.md). Conexão direta ao Supabase permanece uma etapa separada porque o relatório usa importação local de CSVs.
+
+As próximas melhorias são opcionais: automatizar a validação do PBIP em CI, trocar o caminho absoluto do parâmetro por uma configuração mais portátil e publicar uma versão interativa em um workspace do Power BI.
 
 ## Atualização: calendário automático removido
 

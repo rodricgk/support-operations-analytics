@@ -1,6 +1,14 @@
 # Support Operations Analytics
 
-Projeto de portfólio em construção por Rodrigo Fernandes: análise de filas e prazos de incidentes de TI com Python, PostgreSQL no Supabase e Power BI.
+Projeto de portfólio de Rodrigo Fernandes sobre filas e prazos de incidentes de TI, construído com Python, PostgreSQL no Supabase e Power BI.
+
+O projeto transforma um histórico público de eventos em duas visões operacionais: duração dos chamados resolvidos e evolução diária da fila. O resultado final inclui um relatório Power BI com as páginas **Duração** e **Fila**, modelo PBIP revisável, PDF de apresentação e documentação das regras de negócio.
+
+![Duração dos chamados](docs/imagens/duracao.png)
+
+**Números principais:** 24.918 chamados, 23.362 chamados elegíveis para duração, mediana de 22,10 horas, P90 de 381,55 horas e pico observado de 1.869 pendentes.
+
+**Materiais:** [relatório em PDF](power_bi/support-operations-analytics.pdf) · [projeto PBIP](power_bi/support-operations-analytics.pbip) · [roteiro de apresentação](docs/apresentacao-portfolio.md)
 
 ## Objetivo
 
@@ -13,11 +21,13 @@ https://doi.org/10.24432/C57S4H
 
 Amaral, C., Fantinato, M., & Peres, S. (2018). Licença da base: CC BY 4.0. Conferidas no CSV: 141.712 eventos de 24.918 incidentes anonimizados, com 36 colunas.
 
-O projeto utiliza exclusivamente dados públicos; não contém dados do empregador do autor. As transformações serão documentadas. Este projeto não é afiliado à organização de origem da base.
+O projeto utiliza exclusivamente dados públicos; não contém dados do empregador do autor. As transformações e suas limitações estão documentadas. Este projeto não é afiliado à organização de origem da base.
+
+O código e a documentação deste repositório estão sob a [licença MIT](LICENSE). A base UCI é externa e permanece sob os termos CC BY 4.0 indicados acima.
 
 ## Estado atual
 
-Histórico público investigado e modelo local implementado. Cinco tabelas preenchidas no Supabase: 141.712 eventos, 24.918 chamados, 170.645 fotografias, 355 datas e 355 resumos diários. Reconciliação Python versus SQL concluída: 14 testes passaram e cinco checksums conferiram. Ainda não há dashboard. A fila segue regras provisórias documentadas; nenhuma meta de SLA foi inventada.
+Histórico público investigado e modelo local implementado. Cinco tabelas preenchidas no Supabase: 141.712 eventos, 24.918 chamados, 170.645 fotografias, 355 datas e 355 resumos diários. Reconciliação Python versus SQL concluída: 14 testes passaram e cinco checksums conferiram. Relatório Power BI concluído com páginas Duração e Fila, arquivos PBIX/PBIP, PDF e nove medidas DAX conferidas no modelo textual. As regras e limitações da fila estão documentadas; nenhuma meta de SLA foi inventada. O Power BI usa importação local de CSVs.
 
 ## Executar a primeira inspeção (Windows / PowerShell)
 
@@ -50,7 +60,7 @@ Veja a [investigação de inconsistências](docs/investigacao-inconsistencias.md
 Quinta etapa: `.\.venv\Scripts\python.exe scripts/05_comparar_fila.py` (depende dos extratos do script 04).
 Veja a [comparação de cenários da fila](docs/sensibilidade-fila.md), com regras provisórias, resultados e limitações. Trata-se de análise exploratória, não de um indicador final validado da operação.
 
-Próxima fase: [dicionário de indicadores v0.1](docs/dicionario-indicadores.md) e [roteiro de estudo](docs/estudo-fundamentos.md). O dicionário especifica as métricas e os grãos; não implica que todos os cálculos já estejam implementados.
+Documentação complementar: [dicionário de indicadores](docs/dicionario-indicadores.md) e [roteiro de estudo](docs/estudo-fundamentos.md). O dicionário registra métricas, grãos e limites de interpretação.
 
 Sexta etapa: `.\.venv\Scripts\python.exe scripts/06_modelar_tabelas.py` (depende das etapas 04 e 05).
 Gera eventos, chamados, fotografias e calendário locais, com [regras e validação do modelo](docs/modelo-local.md). A carga no banco foi concluída na etapa Supabase descrita abaixo.
@@ -65,7 +75,7 @@ Primeiros indicadores de duração implementados: mediana 22,10 h e P90 381,55 h
 
 Idade da fila implementada em `scripts/10_idade_fila_diaria.py` e `sql/05_idade_fila_diaria.sql`: 710 resultados conferidos, cobrindo 355 dias e dois cenários. Veja [regras, exemplos e uso no Power BI](docs/idade-fila.md) e o tutorial `notebooks/10_idade_fila_diaria.ipynb`. Dias sem pendentes têm mediana em branco.
 
-## Entregas previstas
+## Entrega do Power BI
 
 Modelo de leitura para Power BI preparado: quatro views privadas, calendário de 731 dias e exportação local sem senha. Execute `scripts/11_preparar_power_bi.py` e siga o [guia de importação e relacionamentos](docs/modelo-power-bi.md). Nove verificações SQL passaram. As consultas M foram importadas e as páginas Duração e Fila foram construídas no Desktop. Veja [medidas DAX, regras e conferências do relatório](docs/relatorio-power-bi.md). O [arquivo PBIX](power_bi/support-operations-analytics.pbix) está salvo no projeto, com integridade do contêiner conferida. [PDF de apresentação](power_bi/support-operations-analytics.pdf) e imagens das duas páginas foram revisados. As nove fórmulas nativas foram conferidas no PBIP; Data/hora automática desativada e identificadores técnicos ajustados. A cópia PBIX foi atualizada. O [projeto PBIP](power_bi/support-operations-analytics.pbip) inclui o modelo e o relatório em arquivos de texto para revisão no Git.
 
@@ -73,7 +83,15 @@ Modelo de leitura para Power BI preparado: quatro views privadas, calendário de
 - Estrutura e consultas SQL no Supabase.
 - Relatório Power BI: visão gerencial e investigação operacional.
 - Documentação das métricas, decisões e limitações.
-- Imagens e roteiro de vídeo para apresentação no LinkedIn.
+- Imagens e roteiro de demonstração para apresentação no LinkedIn.
+
+Para reproduzir a camada de dados do relatório, execute `scripts/11_preparar_power_bi.py` e abra o PBIP no Power BI Desktop. O PBIX contém os dados incorporados e serve para visualização imediata. Em um clone, o PBIP exige atualizar o parâmetro `PastaDados` para o caminho local de `data/processed/power_bi`; essa pasta é gerada e ignorada pelo Git.
+
+Para repetir as principais conferências sem executar cada etapa manualmente:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/12_validar_entrega.py
+```
 
 ## Roteiro
 
@@ -83,6 +101,8 @@ Consulte [o plano](docs/plano.md), [a primeira sessão](docs/primeira-sessao.md)
 
 Duração com todos os meses; Fila no intervalo de 01/01/2016 a 16/03/2016. Base histórica estática. O PDF contém apenas as linhas visíveis das tabelas; o PBIX permite navegar pelo detalhamento completo.
 
-![Duração dos chamados](docs/imagens/duracao.png)
-
 ![Fila de suporte](docs/imagens/fila.png)
+
+## Apresentação do portfólio
+
+Consulte o [roteiro de demonstração de 2 a 3 minutos](docs/apresentacao-portfolio.md), com decisões de modelagem, resultados e limites de interpretação.
