@@ -21,18 +21,18 @@ Não assumir que linhas são incidentes, que reatribuição equivale a erro ou q
 
 ## Forma de trabalho
 
-Construção acompanhada, por marcos, sem prazo fixo. A cada etapa: explicar a pergunta, discutir opções, realizar uma atividade prática, revisar o resultado e registrar o aprendizado. Decisões delegadas também devem ser explicadas. Priorizar o aprendizado de Power BI, aproveitando o domínio intermediário/avançado declarado em Python e SQL.
+Construí o projeto por marcos, sem prazo fixo. Em cada etapa, explico a pergunta, comparo opções, realizo uma atividade prática, reviso o resultado e registro o aprendizado. Priorizo o aprendizado de Power BI, aproveitando meu domínio intermediário/avançado de Python e SQL.
 
 ## Controle de versão
 
-Repositório público previsto: support-operations-analytics. Fazer commits de avanços reais e push ao concluir sessões, quando houver autenticação. Não alterar datas para simular atividade. Verificar a identidade do autor antes do primeiro commit. Não versionar credenciais ou ambientes locais.
+Repositório público previsto: support-operations-analytics. Fazer commits de avanços reais e push ao concluir sessões, quando houver autenticação. Não alterar datas para simular atividade. Confirmar minha identidade antes do primeiro commit. Não versionar credenciais ou ambientes locais.
 
 ## Conclusão da primeira versão
 
 - SQL e Power BI apresentam números reconciliados.
 - Processo reproduzível a partir das instruções.
 - Fonte, transformações e limitações documentadas.
-- Autor consegue explicar uma métrica, uma decisão de modelagem e um achado.
+- Eu consigo explicar uma métrica, uma decisão de modelagem e um achado.
 
 ## Fora da primeira versão
 

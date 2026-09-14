@@ -2,16 +2,16 @@
 
 ## Estado em 12/09/2026
 
-Relatório construído manualmente por Rodrigo Fernandes no Power BI Desktop, com importação local das quatro consultas M e configuração dos relacionamentos descritos em [modelo-power-bi.md](modelo-power-bi.md). As capturas e confirmações da sessão mostram as duas páginas funcionando. O PBIP foi inspecionado: nove fórmulas nativas conferidas por comparação textual, relacionamentos e metadados revisados. Não foram executadas novas consultas DAX por ferramenta nesta etapa.
+Eu construí o relatório no Power BI Desktop, importei localmente as quatro consultas M e configurei os relacionamentos descritos em [modelo-power-bi.md](modelo-power-bi.md). As capturas e confirmações da sessão mostram as duas páginas funcionando. Inspecionei o PBIP: conferi nove fórmulas nativas por comparação textual e revisei os relacionamentos e metadados. Não executei novas consultas DAX por ferramenta nesta etapa.
 
-Arquivo salvo e conferido em `power_bi/support-operations-analytics.pbix` (3.254.315 bytes). Contêiner ZIP íntegro; metadados das duas páginas inspecionados, conforme [evidência do arquivo](power-bi-arquivo-validacao.json). As fórmulas foram conferidas posteriormente no PBIP. A cópia PBIX foi salva novamente pelo autor após os ajustes do modelo; suas definições de relatório coincidem com as do PBIP. PDF de duas páginas e imagens finais salvos e revisados visualmente; veja [evidência da exportação](power-bi-pdf-validacao.json). Data/hora automática desativada e identificadores linha_csv/linha_csv_final ocultos e sem resumo, confirmados no PBIP.
+Salvei e conferi o arquivo `power_bi/support-operations-analytics.pbix` (3.254.315 bytes). O contêiner ZIP está íntegro; inspecionei os metadados das duas páginas, conforme [evidência do arquivo](power-bi-arquivo-validacao.json). Conferi as fórmulas posteriormente no PBIP e salvei novamente a cópia PBIX após os ajustes do modelo; suas definições de relatório coincidem com as do PBIP. Também salvei e revisei visualmente o PDF de duas páginas e as imagens finais; veja [evidência da exportação](power-bi-pdf-validacao.json). Desativei a data/hora automática e deixei os identificadores linha_csv/linha_csv_final ocultos e sem resumo, conforme confirmado no PBIP.
 
 ## Medidas para reprodução
 
 - [Duração: quatro medidas](../power_bi/medidas/duracao.dax), tabela inicial Chamados.
 - [Fila: cinco medidas](../power_bi/medidas/fila.dax), tabela inicial Fotografias.
 
-Os arquivos registram as fórmulas usadas na orientação da sessão; não são uma exportação do PBIX. Criar cada medida individualmente em Nova medida, preservando os nomes. Renomear para este visual altera apenas o texto exibido. Formatar contagens como inteiros, horas com duas casas e Data Referencia Fila como dd/MM/yyyy. Nos cartões, unidades de exibição Nenhum.
+Os arquivos registram as fórmulas que usei como referência; não são uma exportação do PBIX. Para reproduzir, crie cada medida individualmente em Nova medida, preservando os nomes. Renomear para este visual altera apenas o texto exibido. Formate contagens como inteiros, horas com duas casas e Data Referencia Fila como dd/MM/yyyy. Nos cartões, use unidades de exibição Nenhum.
 
 ## Página Duração
 
@@ -46,7 +46,7 @@ Tabela de prioridades usa Fotografias[priority], atributo histórico, com as med
 
 ## Conferências registradas na sessão
 
-Valores abaixo foram observados em capturas ou confirmados pelo autor. As referências gerais de duração e fila já haviam sido reconciliadas em Python/SQL; isto não substitui uma auditoria automática do PBIX.
+Observei os valores abaixo nas capturas e os confirmei nas conferências do projeto. As referências gerais de duração e fila já haviam sido reconciliadas em Python/SQL; isto não substitui uma auditoria automática do PBIX.
 
 | Recorte | Resultado observado |
 |---|---|

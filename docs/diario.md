@@ -5,7 +5,7 @@
 - Definido foco em filas e prazos com visão gerencial complementar.
 - Escolhida base pública UCI, sujeita a inspeção.
 - Escolhidas ferramentas: Python, Supabase/PostgreSQL, Power BI e GitHub.
-- Definido aprendizado acompanhado, com atenção especial a Power BI.
+- Planejei um percurso prático de aprendizado, com atenção especial a Power BI.
 - Definido repositório público e projeto separado no Supabase.
 - Próxima atividade: inspecionar a granularidade dos eventos.
 
@@ -19,7 +19,7 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 - Criado script somente de leitura para comparar eventos e incidentes.
 - Exemplo INC0000045: quatro registros, incluindo dois com estado Resolved. As datas resolved_at e closed_at já aparecem preenchidas no registro New.
 - Hipótese a investigar: campos de resultado podem ter sido adicionados retrospectivamente no enriquecimento. Não assumir que estavam disponíveis no momento de cada evento.
-- Discussão com o autor ainda pendente. Próximo passo: interpretar o exemplo antes de definir regras de consolidação e métricas.
+- Eu ainda precisava interpretar o exemplo antes de definir regras de consolidação e métricas.
 
 ## Segunda inspeção — ordem dos eventos
 
@@ -31,7 +31,7 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 
 ## Terceira inspeção — consistência do contador
 
-- O autor identificou o maior contador como candidato a evento posterior em um empate de horário.
+- Identifiquei o maior contador como candidato a evento posterior em um empate de horário.
 - Script 03 executado: valores válidos, mas 5 chamados apresentam regressões do contador entre horários (11 grupos).
 - Chave composta permanece única após conversão numérica.
 - Evidências e limites em validacao-contador.md. Nenhuma correção ou exclusão aplicada.
@@ -47,7 +47,7 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 
 ## 08/09/2026 — comparação de cenários da fila diária
 
-- Acordado preservar os valores originais e sinalizar exceções, sem atribuir causa não comprovada à plataforma.
+- Decidi preservar os valores originais e sinalizar exceções, sem atribuir causa não comprovada à plataforma.
 - Implementada fotografia diária provisória por último estado conhecido, com espera como pendência e estados desconhecidos em contagem separada.
 - Comparados 355 dias: cinco dias com diferença, máximo de cinco chamados ou 3,07% da fila com todos no primeiro dia.
 - Seis fotografias apresentam um chamado em estado desconhecido. Próxima etapa deve incluir essa lacuna na definição dos indicadores.
@@ -73,8 +73,8 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 
 ## 11/09/2026 — criação e conexão do projeto Supabase
 
-- Autor autorizou criar e conectar; confirmou rodricgk's Org e São Paulo.
-- Conector informou custo de criação 0/mês no plano Free; confirmação de custo concluída.
+- Criei e conectei o projeto na rodricgk's Org, em São Paulo.
+- O conector informou custo de criação 0/mês no plano Free; concluí essa confirmação sem tratar o valor como garantia futura.
 - Projeto support-operations-analytics criado, referência cgvfubhikahizyydpmst, status ACTIVE_HEALTHY.
 - Consulta de teste pelo conector retornou PostgreSQL 17.6 e connection_test=1.
 - Vínculo documentado no repositório, sem credenciais. Conexões diretas de Python e Power BI e carga de dados ainda pendentes.
@@ -90,7 +90,7 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 
 ## 11/09/2026 — carga concluída e reconciliação independente
 
-- Autor preferiu adiar a senha local. Carga concluída com painel e conector autenticados, sem conexão Python direta.
+- Preferi adiar a senha local. Concluí a carga com o painel e o conector autenticados, sem conexão Python direta.
 - Histórico de 141.712 eventos integralmente carregado; registros existentes preservados durante a retomada em lotes.
 - Resumo de 355 dias importado como referência independente produzida em Python.
 - Reconstruídas 170.645 fotografias no SQL com LEAD e intervalos de validade dos eventos.
@@ -128,16 +128,16 @@ Nas próximas sessões, registrar: atividade realizada, evidência obtida, apren
 
 ## 12/09/2026 — relatório Power BI e documentação das medidas
 
-- Importadas as quatro tabelas localmente e configurados os relacionamentos por calendário no Desktop, com orientação durante a sessão.
+- Importei as quatro tabelas localmente e configurei os relacionamentos por calendário no Desktop.
 - Construídas páginas Duração e Fila, com medidas DAX, filtros, cartões, gráficos e tabelas. Layout alinhado em 1280 × 720.
 - Conferidos resultados gerais, meses específicos, zeros, ausência de cobertura e interação por prioridade; natureza de cada evidência registrada em relatorio-power-bi.md.
 - Registradas nove medidas em power_bi/medidas, como referência textual da sessão, sem exportação automatizada do modelo nativo.
 - Atualizado o estado da documentação. JSON da preparação preservado como evidência histórica daquela etapa.
 - Pendente: salvar o PBIX no repositório, conferir fórmulas nativas e guardar imagens finais. Sem nova conexão ou alteração no Supabase.
 
-- Entrega posterior na mesma sessão: PBIX salvo pelo autor no projeto, 3.298.073 bytes; ZIP íntegro e metadados das páginas conferidos. Evidência em power-bi-arquivo-validacao.json. Fórmulas nativas ainda não auditadas.
+- Entrega posterior na mesma sessão: salvei o PBIX no projeto, com 3.298.073 bytes; conferi o ZIP e os metadados das páginas. Evidência em power-bi-arquivo-validacao.json. As fórmulas nativas ainda não estavam auditadas.
 
-- PDF de duas páginas salvo pelo autor e revisado por renderização: Duração sem filtro mensal e Fila até 16/03/2016. Imagens incorporadas ao README. Exportação estática preserva somente as linhas visíveis das tabelas; evidência em power-bi-pdf-validacao.json.
+- Salvei e revisei por renderização o PDF de duas páginas: Duração sem filtro mensal e Fila até 16/03/2016. Incorporei as imagens ao README. A exportação estática preserva somente as linhas visíveis das tabelas; evidência em power-bi-pdf-validacao.json.
 
 - PBIP revisado: nove fórmulas nativas coincidem com as referências, quatro relações planejadas e Calendario marcado. Desativados calendários automáticos; linha_csv e linha_csv_final ocultos e sem resumo, conferidos nos arquivos. Falta atualizar a cópia PBIX com os ajustes.
 

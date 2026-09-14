@@ -2,7 +2,7 @@
 
 ## Mensagem central
 
-Transformei um histórico público de eventos de suporte em um modelo que separa duração dos chamados e evolução diária da fila. Usei Python para investigar e preparar os dados, PostgreSQL no Supabase para reconstruir e conferir resultados, e Power BI para explorar os indicadores.
+Eu transformei um histórico público de eventos de suporte em um modelo que separa duração dos chamados e evolução diária da fila. Usei Python para investigar e preparar os dados, PostgreSQL no Supabase para reconstruir e conferir resultados, e Power BI para explorar os indicadores.
 
 ## 1. Problema — mostrar as duas páginas (20 segundos)
 
@@ -10,7 +10,7 @@ Transformei um histórico público de eventos de suporte em um modelo que separa
 
 ## 2. Decisão de modelagem — mostrar o modelo (30 segundos)
 
-“A parte central foi distinguir evento, chamado e fotografia diária. Um chamado pode aparecer em muitos eventos e em vários dias da fila. Por isso, contar todas as linhas como chamados daria uma resposta errada. Separei uma tabela com um registro por chamado e outra com um registro por chamado e data. Na análise da fila, usei os atributos observados naquele dia; na duração, os atributos finais.”
+“A parte central do meu trabalho foi distinguir evento, chamado e fotografia diária. Um chamado pode aparecer em muitos eventos e em vários dias da fila. Por isso, contar todas as linhas como chamados daria uma resposta errada. Separei uma tabela com um registro por chamado e outra com um registro por chamado e data. Na análise da fila, usei os atributos observados naquele dia; na duração, os atributos finais.”
 
 ## 3. Duração — mostrar a página sem filtro mensal (35 segundos)
 

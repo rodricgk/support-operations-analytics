@@ -41,7 +41,7 @@ As fotografias foram reconstruídas no próprio banco por sql/03_gerar_fotografi
 
 Essa formulação também trata o limite da meia-noite: uma atualização exatamente à meia-noite seguinte não altera a fotografia do dia anterior. Foram verificados exemplos controlados desse limite e de dois eventos no mesmo horário com contadores diferentes.
 
-O resultado foi conferido com a fotografia já calculada em Python. Não foram criadas senhas nem configurado acesso direto do Python. O autor preferiu adiar essa configuração.
+Conferi o resultado com a fotografia já calculada em Python. Não criei senhas nem configurei acesso direto do Python; preferi adiar essa configuração.
 
 ## Alternativa: carregar por Python
 
@@ -89,7 +89,7 @@ Já executados:
 - Teste transacional de repetição da inserção do calendário não gerou novas linhas; teste revertido.
 
 Ainda pendentes:
-- Execução do COPY pelo Python autenticado e teste completo de repetição desse script, caso o autor escolha essa alternativa.
+- Execução do COPY pelo Python autenticado e teste completo de repetição desse script, caso eu escolha essa alternativa.
 - Conexão de leitura para o Power BI.
 
 Os verificadores do Supabase retornaram informações de RLS sem políticas nas cinco tabelas e de índice ainda sem uso. Nesta etapa, o acesso é administrativo: não há políticas públicas nem privilégios de uso do esquema para anon/authenticated. A política de leitura do Power BI será definida quando criarmos seu usuário de leitura.

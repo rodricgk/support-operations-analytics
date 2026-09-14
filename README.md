@@ -1,6 +1,6 @@
 # Support Operations Analytics
 
-Projeto de portfólio de Rodrigo Fernandes sobre filas e prazos de incidentes de TI, construído com Python, PostgreSQL no Supabase e Power BI.
+Este é meu projeto de portfólio sobre filas e prazos de incidentes de TI. Eu usei Python, PostgreSQL no Supabase e Power BI para investigar a base, modelar o histórico e apresentar os indicadores.
 
 O projeto transforma um histórico público de eventos em duas visões operacionais: duração dos chamados resolvidos e evolução diária da fila. O resultado final inclui um relatório Power BI com as páginas **Duração** e **Fila**, modelo PBIP revisável, PDF de apresentação e documentação das regras de negócio.
 
@@ -21,7 +21,7 @@ https://doi.org/10.24432/C57S4H
 
 Amaral, C., Fantinato, M., & Peres, S. (2018). Licença da base: CC BY 4.0. Conferidas no CSV: 141.712 eventos de 24.918 incidentes anonimizados, com 36 colunas.
 
-O projeto utiliza exclusivamente dados públicos; não contém dados do empregador do autor. As transformações e suas limitações estão documentadas. Este projeto não é afiliado à organização de origem da base.
+Eu usei exclusivamente dados públicos; o projeto não contém dados de empregador. As transformações e suas limitações estão documentadas. Este projeto não é afiliado à organização de origem da base.
 
 O código e a documentação deste repositório estão sob a [licença MIT](LICENSE). A base UCI é externa e permanece sob os termos CC BY 4.0 indicados acima.
 
@@ -65,11 +65,11 @@ Documentação complementar: [dicionário de indicadores](docs/dicionario-indica
 Sexta etapa: `.\.venv\Scripts\python.exe scripts/06_modelar_tabelas.py` (depende das etapas 04 e 05).
 Gera eventos, chamados, fotografias e calendário locais, com [regras e validação do modelo](docs/modelo-local.md). A carga no banco foi concluída na etapa Supabase descrita abaixo.
 
-Projeto Supabase separado criado e conexão pelo Codex validada. Veja [estado das conexões](docs/conexao-supabase.md). Python e Power BI ainda não possuem conexão direta configurada.
+Criei um projeto Supabase separado e validei a conexão pelo painel e pelo SQL Editor. Veja [estado das conexões](docs/conexao-supabase.md). Python e Power BI ainda não possuem conexão direta configurada.
 
 Etapa Supabase: carga concluída pelo painel e conector autenticados. Fotografias reconstruídas independentemente com `LEAD` em `sql/03_gerar_fotografias.sql`, com resultado equivalente ao Python. Veja [modelo SQL e reprodução](docs/modelo-supabase.md) e [evidência da validação](docs/validacao-supabase.json).
 
-O script `07_carregar_supabase.py` oferece uma alternativa de carga por COPY; sua execução autenticada permanece pendente, por escolha do autor de adiar a senha local. O script `08_preparar_conferencia_integridade.py` gera os checksums dos CSVs para comparação no banco sem precisar de senha.
+O script `07_carregar_supabase.py` oferece uma alternativa de carga por COPY; eu mantive sua execução autenticada pendente para não guardar a senha no ambiente local. O script `08_preparar_conferencia_integridade.py` gera os checksums dos CSVs para comparação no banco sem precisar de senha.
 
 Primeiros indicadores de duração implementados: mediana 22,10 h e P90 381,55 h, sobre 23.362 chamados elegíveis. Consulte [população, recortes e limites](docs/indicadores-duracao.md), a consulta `sql/04_indicadores_duracao.sql` e o tutorial `notebooks/09_indicadores_duracao.ipynb`. Execute `scripts/09_indicadores_duracao.py` para reproduzir e conferir com a saída SQL salva. A duração é retrospectiva, em horas corridas; não é uma medida de SLA.
 
