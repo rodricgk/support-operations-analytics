@@ -8,7 +8,7 @@ O projeto transforma um histórico público de eventos em duas visões operacion
 
 **Números principais:** 24.918 chamados, 23.362 chamados elegíveis para duração, mediana de 22,10 horas, P90 de 381,55 horas e pico observado de 1.869 pendentes.
 
-**Materiais:** [relatório em PDF](power_bi/support-operations-analytics.pdf) · [projeto PBIP](power_bi/support-operations-analytics.pbip) · [roteiro de apresentação](docs/apresentacao-portfolio.md)
+**Materiais:** [relatório em PDF](power_bi/support-operations-analytics.pdf) · [projeto PBIP](power_bi/support-operations-analytics.pbip) · [auditoria de qualidade](docs/auditoria-qualidade-dados.md) · [roteiro de apresentação](docs/apresentacao-portfolio.md)
 
 ## Objetivo
 
@@ -92,6 +92,10 @@ Para repetir as principais conferências sem executar cada etapa manualmente:
 ```powershell
 .\.venv\Scripts\python.exe scripts/12_validar_entrega.py
 ```
+
+Essa validação confere a procedência dos artefatos por hash, reconcilia as
+contagens com o manifesto atual e executa 28 testes de qualidade. As ressalvas
+conhecidas e seus efeitos estão na [auditoria de dados e métricas](docs/auditoria-qualidade-dados.md).
 
 ## Roteiro
 

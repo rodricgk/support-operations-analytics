@@ -7,10 +7,13 @@ usa credenciais, não altera a base bruta e não executa consultas no Supabase.
 from __future__ import annotations
 
 import json
+import hashlib
 import subprocess
 import sys
 import zipfile
 from pathlib import Path
+
+import pandas as pd
 
 
 RAIZ = Path(__file__).resolve().parents[1]
@@ -34,22 +37,27 @@ def ler_json(caminho: str) -> dict:
 
 
 def validar_indicadores() -> None:
+    manifest = ler_json("data/processed/modelo/validacao.json")
     duracao = ler_json("data/processed/duracao/validacao.json")
     geral = next(
         item
         for item in duracao["resultados"]
         if item["cenario"] == "todos" and item["recorte"] == "geral"
     )
-    if geral["n_total"] != 24918:
-        raise AssertionError("Total de chamados diferente do esperado.")
-    if geral["n_elegivel"] != 23362:
-        raise AssertionError("Quantidade elegível diferente do esperado.")
+    if geral["n_total"] != manifest["chamados"]:
+        raise AssertionError("Total de chamados difere do manifesto do modelo.")
+    if geral["n_elegivel"] != manifest["elegiveis_duracao"]:
+        raise AssertionError("Quantidade elegível difere do manifesto do modelo.")
+    chamados = RAIZ / "data/processed/modelo/chamados.csv"
+    if duracao["sha256_chamados_csv"] != hashlib.sha256(chamados.read_bytes()).hexdigest():
+        raise AssertionError("Indicadores de duração foram gerados com outro arquivo de chamados.")
 
     fila = ler_json("data/processed/idade_fila/validacao.json")
-    if fila["linhas_conferidas"] != 710 or fila["dias"] != 355:
-        raise AssertionError("Cobertura diária da fila diferente do esperado.")
-    if fila["primeiro_dia_de_maior_fila"]["n_fila"] != 1869:
-        raise AssertionError("Pico da fila diferente do esperado.")
+    if fila["linhas_conferidas"] != 2 * manifest["datas"] or fila["dias"] != manifest["datas"]:
+        raise AssertionError("Cobertura diária da fila difere do manifesto do modelo.")
+    resumo = pd.read_csv(RAIZ / "data/processed/modelo/resumo_diario.csv")
+    if fila["primeiro_dia_de_maior_fila"]["n_fila"] != int(resumo.fila_todos.max()):
+        raise AssertionError("Pico da fila difere do resumo diário modelado.")
 
 
 def validar_modelo_power_bi() -> None:
@@ -93,6 +101,7 @@ def main() -> None:
     executar("09_indicadores_duracao.py")
     executar("10_idade_fila_diaria.py")
     executar("11_preparar_power_bi.py")
+    executar("13_analisar_qualidade.py")
     validar_indicadores()
     validar_modelo_power_bi()
     validar_pbix()
